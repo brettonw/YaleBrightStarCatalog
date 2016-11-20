@@ -18,3 +18,7 @@ nytprof.out
 *.o
 *.bs
 /_eumm/
+.DS_Store
+unpacked
+.idea
+*.iml

@@ -152,7 +152,7 @@ while (my $entry = <$fh>) {
     $entry .= appendJson ("DEC", "$fields[22]$fields[23]° $fields[24]′ $fields[25]″", 1);
 
     # add all the rest of the fields
-    for (my $i = 26; $i < scalar(@fieldNames); $i++) {
+    for (my $i = 26; $i < 52; $i++) {
         $entry .= appendJson ($fieldNames[$i], $fields[$i], 1);
     }
 

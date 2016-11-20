@@ -180,7 +180,7 @@ while (my $entry = <$fh>) {
         $noteArray .= " ]";
 
         # output the tag element
-        $entry .= ", \"notes\":" . $noteArray;
+        $entry .= ", \"Notes\":" . $noteArray;
     }
 
     # close the line and output it

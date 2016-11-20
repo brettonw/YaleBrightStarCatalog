@@ -9,20 +9,48 @@ sub appendJson {
     chomp $val;
     $val =~ s/^\s+//;
     $val =~ s/\s+$//;
-    $val =~ s/(\s)+/$1/;
+    $val =~ s/(\s)+/$1/g;
     return (length ($val) > 0) ? ((($comma > 0) ? ", " : "" ) . "\"$key\":\"$val\"") : "";
 }
 
-# gunzip the bsc5.dat file into the "unpacked" directory
+# download the bsc5.dat and bsc5.notes files from http://tdc-www.harvard.edu/catalogs/bsc5.html, and
+# gunzip them into the "unpacked" directory
 
+# common variables
+my $fh;
+my $filename;
+
+# load the notes file
+my %notes;
+$filename = "unpacked/bsc5.notes";
+open($fh, "<:encoding(UTF-8)", $filename) or die "Could not open file '$filename' $!";
+while (my $entry = <$fh>) {
+    chomp $entry;
+    $entry =~ s/(\s)+/$1/g;
+    if ($entry =~ /(\d+)\s(.*)/) {
+        my ($id, $note) = ($1, $2);
+
+        # escape any quotes in the note text
+        $note =~ s/"/\\"/g;
+        if (exists ($notes{$id})) {
+            $notes{$id} .= "\$\$\$" . $note;
+        } else {
+            $notes{$id} = $note;
+        }
+        print STDERR "Note ($id), ($note)\n";
+    }
+}
+close $fh;
+
+#open the JSON array
 print "[\n";
 my $lineCount = 0;
 
-my $filename = "unpacked/bsc5.dat";
-open(my $fh, "<:encoding(UTF-8)", $filename) or die "Could not open file '$filename' $!";
+# open the catalog file and traverse the rows
+$filename = "unpacked/bsc5.dat";
+open($fh, "<:encoding(UTF-8)", $filename) or die "Could not open file '$filename' $!";
 while (my $entry = <$fh>) {
     chomp $entry;
-
     # all the fields (from the "read me")
     #  0   1-  4  I4     ---     HR         [1/9110]+ Harvard Revised Number = Bright Star Number
     #  1  5- 14  A10    ---     Name       Name, generally Bayer and/or Flamsteed name
@@ -111,17 +139,49 @@ while (my $entry = <$fh>) {
     }
     $lineCount++;
 
-    # output the line
-    $entry = "{ ";
-    my $comma = 0;
-    for (my $i = 0; $i < scalar(@fieldNames); $i++) {
-        $entry .= appendJson ($fieldNames[$i], $fields[$i], $comma);
-        $comma = 1;
+    # construct the JSON record for the line, up to the RA/Dec fields
+    $entry = "{ " . appendJson ($fieldNames[0], $fields[0], 0);
+    for (my $i = 1; $i < 12; $i++) {
+        $entry .= appendJson ($fieldNames[$i], $fields[$i], 1);
     }
 
-    # add a couple of pre-digested lines
-    $entry .= appendJson ("RA", "$fields[19]h $fields[20]m $fields[21]s", $comma);
-    $entry .= appendJson ("DEC", "$fields[22]$fields[23]° $fields[24]′ $fields[25]″", $comma);
+    # add the RA/Dec consolidated fields
+    $entry .= appendJson ("RA1900", "$fields[12]h $fields[13]m $fields[14]s", 1);
+    $entry .= appendJson ("DEC1900", "$fields[15]$fields[16]° $fields[17]′ $fields[18]″", 1);
+    $entry .= appendJson ("RA", "$fields[19]h $fields[20]m $fields[21]s", 1);
+    $entry .= appendJson ("DEC", "$fields[22]$fields[23]° $fields[24]′ $fields[25]″", 1);
+
+    # add all the rest of the fields
+    for (my $i = 26; $i < scalar(@fieldNames); $i++) {
+        $entry .= appendJson ($fieldNames[$i], $fields[$i], 1);
+    }
+
+    # add notes, if any
+    if ($fields[52] eq "*") {
+        # figure the id
+        my $id = $fields[0];
+        $id =~ s/^\s+//;
+        $id =~ s/\s+$//;
+
+        # get the notes entries
+        print STDERR "Note ($id)";
+        my $note = $notes{$id};
+        print STDERR ": ($note)\n";
+
+        # splite the entry into an array
+        my @noteEntries = split (/\$\$\$/, $note);
+        my $noteArray = "[ ";
+        for (my $j = 0; $j < scalar (@noteEntries); $j++) {
+            if ($j > 0) {
+                $noteArray .= ", ";
+            }
+            $noteArray .= "\"$noteEntries[$j]\"";
+        }
+        $noteArray .= " ]";
+
+        # output the tag element
+        $entry .= ", \"notes\":" . $noteArray;
+    }
 
     # close the line and output it
     $entry .= " }";

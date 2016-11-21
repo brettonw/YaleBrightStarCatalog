@@ -313,7 +313,7 @@ while (my $entry = <$fh>) {
 
                 # try to find the star name from the flamsteed number
                 my $fn = "$flamsteedNumber $constellationNames{$constellationName}";
-                $entry .= appendJson ("Flamsteed", $fn, 1);
+                $entry .= appendJson ("Flamsteed Abbr", $fn, 1);
                 $entry .= appendJson ("Flamsteed Full", makeFullName($fn), 1);
                 #if (length ($commonName) == 0) {
                     print STDERR "Trying Flamsteed designation: $fn\n";
@@ -336,7 +336,7 @@ while (my $entry = <$fh>) {
 
                 # try to find the star name from the bayer number
                 my $bn = "$greekNames{$bayerNumber}$sequence $constellationNames{$constellationName}";
-                $entry .= appendJson ("Bayer", $bn, 1);
+                $entry .= appendJson ("Bayer Abbr", $bn, 1);
                 $entry .= appendJson ("Bayer Full", makeFullName ($bn), 1);
                 #if (length ($commonName) == 0) {
                     print STDERR "Trying Bayer designation: $bn\n";

@@ -7,24 +7,62 @@ use feature 'unicode_strings';
 use utf8;
 use open ':std', ':encoding(UTF-8)';
 
+# greek letter names, with 3 letter abbreviations
+my %greekNames;
+my %greekFullNames;
+sub loadGreekNames {
+    my ($filename) = @_;
+    my $fh;
+    open($fh, "<:encoding(UTF-8)", $filename) or die "Could not open file '$filename' $!";
+    while (my $entry = <$fh>) {
+        chomp $entry;
+        my ($letter,$fullName) = split (/,/, $entry);
+        my $abbreviation = substr($fullName, 0,3);
+        print STDERR "Read ($letter) as ($fullName), abbreviated as ($abbreviation)\n";
+        $greekNames{$abbreviation} = $letter;
+        $greekFullNames{$letter} = $fullName;
+    }
+    close $fh;
+}
+loadGreekNames ("greekNames.txt");
+
 # constellation names, from http://www.skyviewcafe.com/bayer_flamsteed.html
 my %constellationNames;
+my %constellationFullNames;
 sub loadConstellationNames {
     my ($filename) = @_;
     my $fh;
     open($fh, "<:encoding(UTF-8)", $filename) or die "Could not open file '$filename' $!";
     while (my $entry = <$fh>) {
         chomp $entry;
-        my ($abbr, $val2, $val3) = split (/,/, $entry);
-        $constellationNames{$abbr} = $abbr;
-        $constellationNames{$val2} = $abbr;
-        $constellationNames{$val3} = $abbr;
+        my ($abbreviation, $constellationName, $genitiveName) = split (/,/, $entry);
+        $constellationNames{$abbreviation} = $abbreviation;
+        $constellationNames{$constellationName} = $abbreviation;
+        $constellationNames{$genitiveName} = $abbreviation;
+        $constellationFullNames{$abbreviation} = $genitiveName;
     }
     close $fh;
 }
 loadConstellationNames ("constellationNames.txt");
 
+sub makeFullName {
+    my ($name) = @_;
+    if ($name =~ /^(\d+)\s(\w+)$/) {
+        # it's a Flamsteed designation
+        return "$1 " . $constellationFullNames{$2};
+    }
+
+    if ($name =~ /^(.)([¹²³]?)\s(\w+)/){
+        #it's a Bayer designation
+        return $greekFullNames{$1} . $2 . " " . $constellationFullNames{$3};
+    }
+
+    return "";
+}
+
 # IAU star names, need some conditioning on load, from https://en.wikipedia.org/wiki/List_of_proper_names_of_stars
+# this file contains either Bayer Designation or Flamsteed designation, but not both like other
+# files do, so each line can be cleanly handled
 my @superscripts = ('¹', '²', '³');
 my %superscriptOrdinals = ( "¹" => 0, "²" => 1, "³" => 2 );
 my %starNames;
@@ -40,29 +78,39 @@ sub loadStarNames {
         if ($bayerFlamsteed =~ /^([^\s]+)\s*(.*)$/) {
             my ($bf, $constellationName) = ($1, $2);
 
-            # determine the sequence (which star of a multiple this is)
-            my $sequence = "";
-            if ($constellationName =~ s/\s(\w)\w?$//) {
-                my $sequenceNum = ord ($1) - ord ("A");
-                $sequence = $superscripts[$sequenceNum];
-            }
-            if ($bf =~ s/([^\d]+)(\d)$/$1/) {
-                $sequence = $superscripts[$2 - 1];
-            }
-            if ($bf =~ s/([¹²³])$//) {
-                #print STDERR "Got... ($1)\n";
-                my $sequenceNum = $superscriptOrdinals{$1};
-                #print STDERR "superscriptOrdinals('¹')... ($superscriptOrdinals{'¹'})\n";
-                #print STDERR "Value... ($sequenceNum)\n";
-                $sequence = $superscripts[$sequenceNum];
-            }
-
-            if (exists ($constellationNames{$constellationName})) {
-                $bayerFlamsteed = "$bf$sequence $constellationNames{$constellationName}";
-                print STDERR "Good star name ('$bayerFlamsteed' -> $name)\n";
-                $starNames{$bayerFlamsteed} = $name;
+            if ($bf eq "HD") {
+                $starNames{"$bf$constellationName"} = $name;
+                print STDERR "Good star name ('$bf$constellationName' -> $name)\n";
             } else {
-                print STDERR "Unknown constellation: $entry\n";
+
+                # determine the sequence (which star of a multiple this is)
+                my $sequence = "";
+                if ($constellationName =~ s/\s(\w)\w?$//) {
+                    my $sequenceNum = ord ($1) - ord ("A");
+                    $sequence = $superscripts[$sequenceNum];
+                }
+                if ($bf =~ s/([^\d]+)(\d)$/$1/) {
+                    $sequence = $superscripts[$2 - 1];
+                }
+                if ($bf =~ s/([¹²³])$//) {
+                    #print STDERR "Got... ($1)\n";
+                    my $sequenceNum = $superscriptOrdinals{$1};
+                    #print STDERR "superscriptOrdinals('¹')... ($superscriptOrdinals{'¹'})\n";
+                    #print STDERR "Value... ($sequenceNum)\n";
+                    $sequence = $superscripts[$sequenceNum];
+                }
+
+                if (exists ($constellationNames{$constellationName})) {
+                    $bayerFlamsteed = "$bf$sequence $constellationNames{$constellationName}";
+                    if (exists ($starNames{$bayerFlamsteed})) {
+                        print STDERR "Duplicate star name ('$bayerFlamsteed' -> $name -> $starNames{$bayerFlamsteed})\n";
+                    } else {
+                        print STDERR "Good star name ('$bayerFlamsteed' -> $name)\n";
+                        $starNames{$bayerFlamsteed} = $name;
+                    }
+                } else {
+                    print STDERR "Unknown constellation: $entry\n";
+                }
             }
         } else {
             print STDERR "Bad Bayer Name: $entry\n";
@@ -71,21 +119,6 @@ sub loadStarNames {
     close $fh;
 }
 loadStarNames ("starNames-IAU.txt");
-
-# greek letter names, with 3 letter abbreviations
-my %greekNames;
-sub loadGreekNames {
-    my ($filename) = @_;
-    my $fh;
-    open($fh, "<:encoding(UTF-8)", $filename) or die "Could not open file '$filename' $!";
-    while (my $entry = <$fh>) {
-        chomp $entry;
-        my ($letter, $abbr) = split (/,/, $entry);
-        $greekNames{$abbr} = $letter;
-    }
-    close $fh;
-}
-loadGreekNames ("greekNames.txt");
 
 sub appendJson {
     my($key, $val, $comma) = @_;
@@ -102,6 +135,9 @@ sub appendJson {
 # common variables
 my $fh;
 my $filename;
+my $bayerMatchCount = 0;
+my $flamsteedMatchCount = 0;
+my $draperMatchCount = 0;
 
 # common names, from the notes...
 my %commonNames;
@@ -252,9 +288,8 @@ while (my $entry = <$fh>) {
     my $id = $fields[0];
     $id =~ s/^\s+//;
 
-    # output the common name if we already know it
+    # set the common name if we already know it, but we will prefer the IAU name if we've got that
     my $commonName = exists ($commonNames{$id}) ? $commonNames{$id} : "";
-
     {
         # try to get the common name, have to condition the name a bit - it might be a shortened version
         # of a bayer name (Alp Cen) or a flamsteed name (13 Tau), with a few special cases
@@ -279,14 +314,15 @@ while (my $entry = <$fh>) {
                 # try to find the star name from the flamsteed number
                 my $fn = "$flamsteedNumber $constellationNames{$constellationName}";
                 $entry .= appendJson ("Flamsteed", $fn, 1);
-                if (length ($commonName) == 0) {
-                    print STDERR "Trying Flamsteed Name: $fn\n";
+                $entry .= appendJson ("Flamsteed Full", makeFullName($fn), 1);
+                #if (length ($commonName) == 0) {
+                    print STDERR "Trying Flamsteed designation: $fn\n";
                     if (exists ($starNames{$fn})) {
                         $commonName  = $starNames{$fn};
-                        print STDERR "Matched Flamsteed Name: $fn ($starNames{$fn})\n";
+                        print STDERR "Matched Flamsteed designation: $fn ($commonName)\n";
+                        $flamsteedMatchCount++;
                     }
-                }
-
+                #}
             }
 
             # now try to find the star name using the bayer number
@@ -301,15 +337,25 @@ while (my $entry = <$fh>) {
                 # try to find the star name from the bayer number
                 my $bn = "$greekNames{$bayerNumber}$sequence $constellationNames{$constellationName}";
                 $entry .= appendJson ("Bayer", $bn, 1);
-                if (length ($commonName) == 0) {
-                    print STDERR "Trying Bayer Name: $bn\n";
+                $entry .= appendJson ("Bayer Full", makeFullName ($bn), 1);
+                #if (length ($commonName) == 0) {
+                    print STDERR "Trying Bayer designation: $bn\n";
                     if (exists ($starNames{$bn})) {
                         $commonName = $starNames{$bn};
-                        print STDERR "Matched Bayer Name: $bn ($starNames{$bn})\n";
+                        print STDERR "Matched Bayer designation: $bn ($commonName)\n";
+                        $bayerMatchCount++;
                     }
-                }
-
+                #}
             }
+        }
+
+        # now try the HD catalog number
+        my $hdn = "HD" . $fields[3];
+        print STDERR "Trying Draper designation: $hdn\n";
+        if (exists ($starNames{$hdn})) {
+            $commonName = $starNames{$hdn};
+            print STDERR "Matched Draper (HD) designation: $hdn ($commonName)\n";
+            $draperMatchCount++;
         }
     }
     $entry .= appendJson ("Common", $commonName, 1);
@@ -363,3 +409,8 @@ while (my $entry = <$fh>) {
 
 print "\n]";
 close $fh;
+
+print STDERR "Matched $flamsteedMatchCount Flamsteed designations\n";
+print STDERR "Matched $bayerMatchCount Bayer designations\n";
+print STDERR "Matched $draperMatchCount Draper designations\n";
+print STDERR "Matched Total (" . ($flamsteedMatchCount + $bayerMatchCount + $draperMatchCount) . ") designations\n";

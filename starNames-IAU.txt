@@ -26,7 +26,6 @@ Hamal,α Arietis
 Sheratan,β Arietis
 Mesarthim,γ¹ Arietis
 Botein,δ Arietis
-Alhajoth,α Aurigae
 Capella,α Aurigae
 Menkalinan,β Aurigae
 Haldus,ε Aurigae

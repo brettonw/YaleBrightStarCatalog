@@ -4,7 +4,7 @@ http://tdc-www.harvard.edu/catalogs/bsc5.html) to a JSON format.
 
 The JSON file is available at: https://brettonw.github.io/YaleBrightStarCatalog/bsc5.json
 
-Fields in the JSON:
+Fields in the JSON (empty fields in the original source are omitted):
 
 | Field | Description |
 | ----- | ----------- |

@@ -103,7 +103,7 @@ while (my $entry = <$fh>) {
         $note =~ s/"/\\"/g;
 
         # check to see if this is a name
-        if ($note =~ /1N:\s+(\w+);/) {
+        if ($note =~ /1N:\s+(\w+)[;\.]/) {
             my $commonName = ucfirst(lc ($1));
             $commonNames{$id} = $commonName;
             print STDERR "Found Name In Notes ($id -> $commonName)\n";
@@ -234,10 +234,10 @@ while (my $entry = <$fh>) {
     my $id = $fields[0];
     $id =~ s/^\s+//;
 
-    if (exists ($commonNames{$id})) {
-        print STDERR "Matched Common Name: $commonNames{$id}\n";
-        $entry .= appendJson ("Common", $commonNames{$id}, 1);
-    } else {
+    # output the common name if we already know it
+    my $commonName = exists ($commonNames{$id}) ? $commonNames{$id} : "";
+
+    {
         # try to get the common name, have to condition the name a bit - it might be a shortened version
         # of a bayer name (Alp Cen) or a flamsteed name (13 Tau), with a few special cases
         my $name = $fields[1];
@@ -261,10 +261,12 @@ while (my $entry = <$fh>) {
                 # try to find the star name from the flamsteed number
                 my $fn = "$flamsteedNumber $constellationNames{$constellationName}";
                 $entry .= appendJson ("Flamsteed", $fn, 1);
-                print STDERR "Trying Flamsteed Name: $fn\n";
-                if (exists ($starNames{$fn})) {
-                    $entry .= appendJson ("Common", $starNames{$fn}, 1);
-                    print STDERR "Matched Flamsteed Name: $fn ($starNames{$fn})\n";
+                if (length ($commonName) == 0) {
+                    print STDERR "Trying Flamsteed Name: $fn\n";
+                    if (exists ($starNames{$fn})) {
+                        $commonName  = $starNames{$fn};
+                        print STDERR "Matched Flamsteed Name: $fn ($starNames{$fn})\n";
+                    }
                 }
 
             }
@@ -281,15 +283,18 @@ while (my $entry = <$fh>) {
                 # try to find the star name from the bayer number
                 my $bn = "$greekNames{$bayerNumber}$sequence $constellationNames{$constellationName}";
                 $entry .= appendJson ("Bayer", $bn, 1);
-                print STDERR "Trying Bayer Name: $bn\n";
-                if (exists ($starNames{$bn})) {
-                    $entry .= appendJson ("Common", $starNames{$bn}, 1);
-                    print STDERR "Matched Bayer Name: $bn ($starNames{$bn})\n";
+                if (length ($commonName) == 0) {
+                    print STDERR "Trying Bayer Name: $bn\n";
+                    if (exists ($starNames{$bn})) {
+                        $commonName = $starNames{$bn};
+                        print STDERR "Matched Bayer Name: $bn ($starNames{$bn})\n";
+                    }
                 }
 
             }
         }
     }
+    $entry .= appendJson ("Common", $commonName, 1);
 
     # add the fields up to the RA/Dec fields
     for (my $i = 2; $i < 12; $i++) {

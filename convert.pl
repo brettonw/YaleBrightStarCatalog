@@ -85,6 +85,9 @@ sub appendJson {
 my $fh;
 my $filename;
 
+# common names, from the notes...
+my %commonNames;
+
 # load the notes file
 my %notesById;
 $filename = "unpacked/bsc5.notes";
@@ -94,9 +97,19 @@ while (my $entry = <$fh>) {
     $entry =~ s/(\s)+/$1/g;
     if ($entry =~ /(\d+)\s(.*)/) {
         my ($id, $note) = ($1, $2);
+        $id =~ s/^\s*//g;
 
         # escape any quotes in the note text
         $note =~ s/"/\\"/g;
+
+        # check to see if this is a name
+        if ($note =~ /1N:\s+(\w+);/) {
+            my $commonName = ucfirst(lc ($1));
+            $commonNames{$id} = $commonName;
+            print STDERR "Found Name In Notes ($id -> $commonName)\n";
+        }
+
+        # determine whether to append or create...
         if (exists ($notesById{$id})) {
             $notesById{$id} .= "\$\$\$" . $note;
         } else {
@@ -217,9 +230,16 @@ while (my $entry = <$fh>) {
     # construct the JSON record for the line
     $entry = "{ " . appendJson ($fieldNames[0], $fields[0], 0);
 
-    # try to get the common name, have to condition the name a bit - it might be a shortened version
-    # of a bayer name (Alp Cen) or a flamsteed name (13 Tau), with a few special cases
-    if (1) {
+    # figure the id
+    my $id = $fields[0];
+    $id =~ s/^\s+//;
+
+    if (exists ($commonNames{$id})) {
+        print STDERR "Matched Common Name: $commonNames{$id}\n";
+        $entry .= appendJson ("Common", $commonNames{$id}, 1);
+    } else {
+        # try to get the common name, have to condition the name a bit - it might be a shortened version
+        # of a bayer name (Alp Cen) or a flamsteed name (13 Tau), with a few special cases
         my $name = $fields[1];
         $name =~ s/^\s*//g;
         $name =~ s/\s*$//g;
@@ -289,10 +309,6 @@ while (my $entry = <$fh>) {
 
     # add notes, if any
     if ($fields[52] eq "*") {
-        # figure the id
-        my $id = $fields[0];
-        $id =~ s/^\s+//;
-        $id =~ s/\s+$//;
 
         # split the notes entry into an array
         my @notes = split (/\$\$\$/, $notesById{$id});

@@ -1,0 +1,361 @@
+Veritate,14 Andromedae
+Nembus,51 Andromedae
+Alpheratz,α Andromedae
+Mirach,β Andromedae
+Alamak,γ Andromedae
+Almach,γ¹ Andromedae
+Adhil,ξ Andromedae
+Titawin,υ Andromedae A
+Sadalmelik,α Aquarii
+Sadalsuud,β Aquarii
+Sadachbia,γ Aquarii
+Skat,δ Aquarii
+Albali,ε Aquarii
+Ancha,θ Aquarii
+Situla,κ Aquarii
+Bunda,ξ Aquarii
+Altair,α Aquilae
+Alshain,β Aquilae
+Tarazed,γ Aquilae
+Deneb el Okab,ζ Aquilae
+Al Thalimain,ι Aquilae
+Al Thalimain,λ Aquilae
+Libertas,ξ Aquilae
+Cervantes,μ Arae
+Hamal,α Arietis
+Sheratan,β Arietis
+Mesarthim,γ¹ Arietis
+Botein,δ Arietis
+Alhajoth,α Aurigae
+Capella,α Aurigae
+Menkalinan,β Aurigae
+Haldus,ε Aurigae
+Azaleh,ζ Aurigae
+Haedus,ζ Aurigae
+Hoedus (I),ζ Aurigae
+Sadatoni,ζ Aurigae
+Hoedus II,η Aurigae
+Mahasim,θ Aurigae
+Hassaleh,ι Aurigae
+Kabdhilinan,ι Aurigae
+Alkalurops,μ¹ Boötis
+Merga,38 Boötis
+Arcturus,α Boötis
+Nekkar,β Boötis
+Seginus,γ Boötis
+Izar,ε Boötis
+Muphrid,η Boötis
+Asellus Primus,θ Boötis
+Asellus Secundus,ι Boötis
+Asellus Tertius,κ Boötis
+Tonatiuh,HD 104985
+Copernicus,55 Cancri A
+Acubens,α Cancri
+Altarf,β Cancri
+Asellus Borealis,γ Cancri
+Asellus Australis,δ Cancri
+Tegmine,ζ¹ Cancri
+Cor Caroli,α Canum Venaticorum
+Chara,α² Canum Venaticorum
+Asterion,β Canum Venaticorum
+Chara,β Canum Venaticorum
+La Superba,υ Canum Venaticorum
+Sirius,α Canis Majoris
+Mirzam,β Canis Majoris
+Murzim,β Canis Majoris
+Muliphein,γ Canis Majoris
+Wezen,δ Canis Majoris
+Adhara,ε Canis Majoris
+Furud,ζ Canis Majoris
+Aludra,η Canis Majoris
+Procyon,α Canis Minoris
+Gomeisa,β Canis Minoris
+Giedi,α Capricorni
+Algedi,α² Capricorni
+Al Giedi,α¹ Capricorni
+Dabih,β¹ Capricorni
+Nashira,γ Capricorni
+Deneb Algedi,δ Capricorni
+Scheddi,δ Capricorni
+Kastra,ε Capricorni
+Armus,η Capricorni
+Alshat,ν Capricorni
+Okul,π Capricorni
+Canopus,α Carinae
+Miaplacidus,β Carinae
+Avior,ε Carinae
+Aspidiske,ι Carinae
+Schedar,α Cassiopeiae
+Caph,β Cassiopeiae
+Navi,γ Cassiopeia
+Ruchbah,δ Cassiopeiae
+Segin,ε Cassiopeia
+Achird,η Cassiopeiae
+Marfark,θ Cassiopeiae
+Rigil Kentaurus,α Centauri A
+Proxima Centauri,α Centauri C
+Hadar,β Centauri
+Menkent,θ Centauri
+Alderamin,α Cephei
+Alfirk,β Cephei
+Alrai,γ Cephei
+Errai,γ Cephei
+Garnet Star,μ Cephei
+Alkurah,ξ Cephei
+Kurhah,ξ Cephei
+Al Kalb al Rai,ρ2 Cephei
+Menkab,α Ceti
+Menkar,α Ceti
+Diphda,β Ceti
+Kaffaljidhma,γ Ceti
+Baten Kaitos,ζ Ceti
+Dheneb,η Ceti
+Deneb Kaitos Schemali,ι Ceti
+Mira,ο Ceti
+Phact,α Columbae
+Wazn,β Columbae
+Al Kurud,θ Columbae
+Diadem,α Comae Berenices
+Alfecca Meridiana,α Coronae Australis
+Alphecca,α Coronae Borealis
+Gemma,α Coronae Borealis
+Nusakan,β Coronae Borealis
+Alchiba,α Corvi
+Kraz,β Corvi
+Gienah,γ Corvi
+Algorab,δ Corvi
+Minkar,ε Corvi
+Alkes,α Crateris
+Acrux,α Crucis Aa
+Mimosa,β Crucis
+Gacrux,γ Crucis
+Deneb,α Cygni
+Albireo,β¹ Cygni
+Sadr,γ Cygni
+Al Fawaris,δ Cygni
+Azelfafage,π¹ Cygni
+Ruchba,ω² Cygni
+Musica,18 Delphini
+Sualocin,α Delphini
+Rotanev,β Delphini
+Deneb Dulfim,ε Delphini
+Fafnir,42 Draconis
+Thuban,α Draconis
+Alwaid,β Draconis
+Rastaban,β Draconis
+Eltanin,γ Draconis
+Aldib,δ Draconis
+Altais,δ Draconis
+Tyl,ε Draconis
+Aldhibain,ζ Draconis
+Edasich,ι Draconis
+Gianfar,λ Draconis
+Arrakis,μ Draconis
+Kuma,ν Draconis
+Grumium,ξ Draconis
+Alsafi,σ Draconis
+Kitalpha,α Equulei
+Keid,40 Eridani
+Sceptrum,53 Eridani
+Achernar,α Eridani A
+Cursa,β Eridani
+Zaurak,γ Eridani
+Rana,δ Eridani
+Ran,ε Eridani
+Zibal,ζ Eridani
+Azha,η Eridani
+Acamar,θ¹ Eridani
+Beid,ο¹ Eridani
+Angetenar,τ² Eridani
+Theemin,υ² Eridani
+Castor,α Geminorum
+Pollux,β Geminorum
+Alhena,γ Geminorum
+Wasat,δ Geminorum
+Mebsuta,ε Geminorum
+Mekbuda,ζ Geminorum
+Propus,η Geminorum
+Tejat Prior,η Geminorum
+Tejat Posterior,μ Geminorum
+Alzir,ξ Geminorum
+Alnair,α Gruis
+Aldhanab,γ Gruis
+Ogma,HD 149026
+Rasalgethi,α¹ Herculis
+Kornephoros,β Herculis
+Sarin,δ Herculis
+Maasym,λ Herculis
+Kajam,ω Herculis
+Alphard,α Hydrae
+Hydrobius,ζ Hydrae
+Minchir,σ Hydrae
+Head of Hydrus,α Hydri
+Regulus,α Leonis
+Denebola,β Leonis
+Algieba,γ¹ Leonis
+Duhr,δ Leonis
+Zosma,δ Leonis
+Ras Elased Australis,ε Leonis
+Adhafera,ζ Leonis
+Aldhafera,ζ Leonis
+Chertan,θ Leonis
+Al Minliar al Asad,κ Leonis
+Alterf,λ Leonis
+Rasalas,μ Leonis
+Subra,ο Leonis
+Praecipua,46 Leonis Minoris
+Arneb,α Leporis
+Nihal,β Leporis
+Zubenelgenubi,α² Librae
+Zubeneschamali,β Librae
+Zuben-el-Akrab,γ Librae
+Zuben-el-Akribi,δ Librae
+Brachium,σ Librae
+Alsciaukat,31 Lyncis
+Vega,α Lyrae
+Sheliak,β Lyrae
+Sulafat,γ Lyrae
+Aladfar,η Lyrae
+Alathfar,μ Lyrae
+Polaris Australis,σ Octantis
+Rasalhague,α Ophiuchi
+Cebalrai,β Ophiuchi
+Cheleb,β Ophiuchi
+Yed Prior,δ Ophiuchi
+Yed Posterior,ε Ophiuchi
+Sabik,η Ophiuchi
+Marfik,λ Ophiuchi
+Sinistra,ν Ophiuchi
+Betelgeuse,α Orionis
+Rigel,β Orionis
+Bellatrix,γ Orionis
+Mintaka,δ Orionis
+Alnilam,ε Orionis
+Alnitak,ζ Orionis
+Nair Al Saif,ι Orionis
+Saiph,κ Orionis
+Heka,λ Orionis
+Meissa,λ Orionis
+Tabit,π³ Orionis
+Thabit,υ Orionis
+Peacock,α Pavonis
+Helvetios,51 Pegasi
+Markab,α Pegasi
+Scheat,β Pegasi
+Algenib,γ Pegasi
+Enif,ε Pegasi
+Homam,ζ Pegasi
+Matar,η Pegasi
+Baham,θ Pegasi
+Biham,θ Pegasi
+Sadalbari,μ Pegasi
+Salm,τ Pegasi
+Mirfak,α Persei
+Algol,β Persei
+Miram,η Persei
+Misam,κ Persei
+Menkib,ξ Persei
+Atik,ο Persei
+Gorgonea Tertia,ρ Persei
+Ankaa,α Phoenicis
+Alrescha,α Piscium
+Fum al Samakah,β Piscium
+Kullat Nunu,η Piscium
+Torcularis Septentrionalis,ο Piscium
+Fomalhaut,α Piscis Austrini
+Naos,ζ Puppis
+Azmidiske,ξ Puppis
+Tureis,ρ Puppis
+Sham,α Sagittae
+Alrami,α Sagittarii
+Rukbat,α Sagittarii
+Arkab Posterior,β² Sagittarii
+Arkab Prior,β¹ Sagittarii A
+Alnasl,γ² Sagittarii
+Nash,γ² Sagittarii
+Kaus Media,δ Sagittarii
+Media,δ Sagittarii
+Kaus Australis,ε Sagittarii
+Ascella,ζ Sagittarii
+Askella,ζ Sagittarii
+Kaus Borealis,λ Sagittarii
+Albaldah,π Sagittarii
+Nunki,σ Sagittarii
+Terebellum,ω Sagittarii
+Antares,α Scorpii
+Acrab,β Scorpii Aa
+Dschubba,δ Scorpii
+Sargas,θ Scorpii
+Girtab,κ Scorpii
+Shaula,λ Scorpii
+Jabbah,ν Scorpii
+Graffias,ξ Scorpii
+Al Niyat,σ Scorpii
+Alniyat,τ Scorpii
+Lesath,υ Scorpii
+Unukalhai,α Serpentis
+Chow,β Serpentis
+Alya,θ¹ Serpentis
+Celaeno,16 Tauri
+Electra,17 Tauri
+Taygeta,19 Tauri
+Maia,20 Tauri
+Asterope,21 Tauri
+Sterope,22 Tauri
+Merope,23 Tauri
+Atlas,27 Tauri
+Pleione,28 Tauri
+Aldebaran,α Tauri
+Elnath,β Tauri
+Hyadum I,γ Tauri
+Hyadum II,δ¹ Tauri
+Ain,ε Tauri
+Tien Kwan,ζ Tauri
+Alcyone,η Tauri
+Elmuthalleth,α Trianguli
+Mothallah,α Trianguli
+Atria,α Trianguli Australis
+Betria,β Trianguli Australis
+Gatria,γ Trianguli Australis
+Intercrus,41 Lyncis
+Chalawan,47 Ursae Majoris
+Alcor,80 Ursae Majoris
+Dubhe,α Ursae Majoris
+Merak,β Ursae Majoris
+Phecda,γ Ursae Majoris
+Megrez,δ Ursae Majoris
+Alioth,ε Ursae Majoris
+Mizar,ζ Ursae Majoris
+Alkaid,η Ursae Majoris
+Benetnasch,η Ursae Majoris
+Sarir,θ Ursae Majoris
+Dnoces,ι Ursae Majoris
+Talitha,ι Ursae Majoris
+Talitha Australis,κ Ursae Majoris
+Tania Borealis,λ Ursae Majoris
+Tania Australis,μ Ursae Majoris
+Alula Borealis,ν Ursae Majoris
+Alula Australis,ξ Ursae Majoris
+Muscida,ο Ursae Majoris
+Muscida,π Ursae Majoris
+Al Kaphrah,χ Ursae Majoris
+Polaris,α Ursae Minoris
+Kochab,β Ursae Minoris
+Pherkad,γ Ursae Minoris
+Pherkard,δ Ursae Minoris
+Yildun,δ Ursae Minoris
+Regor,γ Velorum
+Suhail,λ Velorum
+Spica,α Virginis
+Alaraph,β Virginis
+Zavijava,β Virginis
+Arich,γ Virginis
+Porrima,γ Virginis
+Auva,δ Virginis
+Minelava,δ Virginis
+Vindemiatrix,ε Virginis
+Heze,ζ Virginis
+Zaniah,η Virginis
+Syrma,ι Virginis
+Rijl al Awwa,μ Virginis
+Lucida Anseris,α Vulpeculae

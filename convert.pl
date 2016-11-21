@@ -3,6 +3,8 @@
 use strict;
 use warnings;
 no warnings ('substr');
+use feature 'unicode_strings';
+use utf8;
 use open ':std', ':encoding(UTF-8)';
 
 # constellation names, from http://www.skyviewcafe.com/bayer_flamsteed.html
@@ -22,7 +24,9 @@ sub loadConstellationNames {
 }
 loadConstellationNames ("constellationNames.txt");
 
-# star names, need some conditioning on load, from https://en.wikipedia.org/wiki/List_of_proper_names_of_stars_in_alphabetical_order
+# IAU star names, need some conditioning on load, from https://en.wikipedia.org/wiki/List_of_proper_names_of_stars
+my @superscripts = ('¹', '²', '³');
+my %superscriptOrdinals = ( "¹" => 0, "²" => 1, "³" => 2 );
 my %starNames;
 sub loadStarNames {
     my ($filename) = @_;
@@ -33,14 +37,28 @@ sub loadStarNames {
         my ($name, $bayerFlamsteed) = split (/,/, $entry);
 
         # normalize the bayer designation
-        if ($bayerFlamsteed =~ /^([^\s]+)\s(.*)$/) {
+        if ($bayerFlamsteed =~ /^([^\s]+)\s*(.*)$/) {
             my ($bf, $constellationName) = ($1, $2);
+
+            # determine the sequence (which star of a multiple this is)
             my $sequence = "";
-            if ($constellationName =~ s/(\s\w)$//) {
-                $sequence = $1;
+            if ($constellationName =~ s/\s(\w)\w?$//) {
+                my $sequenceNum = ord ($1) - ord ("A");
+                $sequence = $superscripts[$sequenceNum];
             }
+            if ($bf =~ s/([^\d]+)(\d)$/$1/) {
+                $sequence = $superscripts[$2 - 1];
+            }
+            if ($bf =~ s/([¹²³])$//) {
+                #print STDERR "Got... ($1)\n";
+                my $sequenceNum = $superscriptOrdinals{$1};
+                #print STDERR "superscriptOrdinals('¹')... ($superscriptOrdinals{'¹'})\n";
+                #print STDERR "Value... ($sequenceNum)\n";
+                $sequence = $superscripts[$sequenceNum];
+            }
+
             if (exists ($constellationNames{$constellationName})) {
-                $bayerFlamsteed = "$bf $constellationNames{$constellationName}$sequence";
+                $bayerFlamsteed = "$bf$sequence $constellationNames{$constellationName}";
                 print STDERR "Good star name ('$bayerFlamsteed' -> $name)\n";
                 $starNames{$bayerFlamsteed} = $name;
             } else {
@@ -52,7 +70,7 @@ sub loadStarNames {
     }
     close $fh;
 }
-loadStarNames ("starNames.txt");
+loadStarNames ("starNames-IAU.txt");
 
 # greek letter names, with 3 letter abbreviations
 my %greekNames;
@@ -278,7 +296,7 @@ while (my $entry = <$fh>) {
                 $name =~ s/^[^\d\s]+\s*//;
                 #print STDERR ("name ($name)\n");
 
-                my $sequence = ($name =~ /^(\d)/) ? "-$1" : "";
+                my $sequence = ($name =~ /^(\d)/) ? ($superscripts[$1 - 1]) : "";
 
                 # try to find the star name from the bayer number
                 my $bn = "$greekNames{$bayerNumber}$sequence $constellationNames{$constellationName}";

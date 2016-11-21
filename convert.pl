@@ -144,32 +144,41 @@ my %commonNames;
 
 # load the notes file
 my %notesById;
+my %notesByIdCat;
 $filename = "unpacked/bsc5.notes";
 open($fh, "<:encoding(UTF-8)", $filename) or die "Could not open file '$filename' $!";
 while (my $entry = <$fh>) {
-    chomp $entry;
-    $entry =~ s/(\s)+/$1/g;
-    if ($entry =~ /(\d+)\s(.*)/) {
-        my ($id, $note) = ($1, $2);
-        $id =~ s/^\s*//g;
+    #chomp $entry;
+    #$entry =~ s/(\s)+/$1/g;
+    #$entry =~ s/^\s*//g;
+    #$entry =~ s/\s*$//g;
 
-        # escape any quotes in the note text
-        $note =~ s/"/\\"/g;
+    # every line is of the form (/^\s([\s\d]{4})([\s\d]{2})([\s\w:]{4})\s(.*)/)
+    if ($entry =~ /^\s([\s\d]{4})([\s\d]{2})([\s\w:]{4})\s(.*)$/) {
+        my ($id, $sequence, $category, $remark) = ($1, $2, $3, $4);
+        $id =~ s/^\s*//; $id =~ s/\s*$//; $id =~ s/(\s)+/$1/g;
+        $sequence =~ s/^\s*//; $sequence =~ s/\s*$//; $sequence =~ s/(\s)+/$1/g;
+        $category =~ s/://; $category =~ s/^\s*//; $category =~ s/\s*$//; $category =~ s/(\s)+/$1/g;
+        $remark =~ s/^\s*//; $remark =~ s/\s*$//; $remark =~ s/(\s)+/$1/g; $remark =~ s/"/\\"/g;
+        my $idCat = "$id-$category";
+        if ($sequence == 1) {
+            $notesByIdCat{$idCat} = $remark;
+            if (exists ($notesById{$id})) {
+                $notesById{$id} .= ";$idCat";
+            } else {
+                $notesById{$id} = $idCat;
+            }
 
-        # check to see if this is a name
-        if ($note =~ /1N:\s+(\w+)[;\.]/) {
-            my $commonName = ucfirst(lc ($1));
-            $commonNames{$id} = $commonName;
-            print STDERR "Found Name In Notes ($id -> $commonName)\n";
-        }
-
-        # determine whether to append or create...
-        if (exists ($notesById{$id})) {
-            $notesById{$id} .= "\$\$\$" . $note;
+            # special check for the name...
+            if (($category eq "N") && ($remark =~ /^(\w+)[;\.]/)) {
+                my $commonName = ucfirst(lc ($1));
+                $commonNames{$id} = $commonName;
+                print STDERR "Found Name In Notes ($id -> $commonName)\n";
+            }
         } else {
-            $notesById{$id} = $note;
+            $notesByIdCat{$idCat} .= " $remark";
         }
-        print STDERR "Note ($id), ($note)\n";
+        print STDERR "Note: ($id-$category)($sequence)($remark)\n";
     }
 }
 close $fh;
@@ -378,23 +387,24 @@ while (my $entry = <$fh>) {
 
     # add notes, if any
     if ($fields[52] eq "*") {
-
-        # split the notes entry into an array
-        my @notes = split (/\$\$\$/, $notesById{$id});
+        # split the notes entry into an array, referring to the idCats
+        my @notesForIdByCat = split (/;/, $notesById{$id});
         my $noteArray = "[ ";
-        for (my $i = 0; $i < scalar (@notes); $i++) {
+        for (my $i = 0; $i < scalar (@notesForIdByCat); $i++) {
             if ($i > 0) {
                 $noteArray .= ", ";
             }
-            if ($notes[$i] =~ /(\d+)(\w+):?\s*(.*)/) {
-                my ($sequence, $categoryId, $remark) = ($1, $2, $3);
-                $noteArray .= "{ ";
-                $noteArray .= appendJson ("Category", $categoryNames{$categoryId}, 0);
-                $noteArray .= appendJson ("Sequence", $sequence, 1);
-                $noteArray .= appendJson ("Remark", $remark, 1);
-                $noteArray .= " }";
-                print STDERR "Note ($categoryNames{$categoryId}) ($sequence) ($remark)\n";
+            my $idCat = $notesForIdByCat[$i];
+            my $category;
+            if ($idCat =~ /^\d+-(\w+)$/) {
+                $category = $categoryNames{$1};
             }
+            my $remark = $notesByIdCat{$idCat};
+            $noteArray .= "{ ";
+            $noteArray .= appendJson ("Category", $category, 0);
+            $noteArray .= appendJson ("Remark", $remark, 1);
+            $noteArray .= " }";
+            print STDERR "Note ($category) ($remark)\n";
         }
         $noteArray .= " ]";
 

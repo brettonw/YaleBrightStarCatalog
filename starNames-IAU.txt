@@ -29,13 +29,9 @@ Botein,δ Arietis
 Capella,α Aurigae
 Menkalinan,β Aurigae
 Haldus,ε Aurigae
-Azaleh,ζ Aurigae
 Haedus,ζ Aurigae
-Hoedus (I),ζ Aurigae
-Sadatoni,ζ Aurigae
 Hoedus II,η Aurigae
 Mahasim,θ Aurigae
-Hassaleh,ι Aurigae
 Kabdhilinan,ι Aurigae
 Alkalurops,μ¹ Boötis
 Merga,38 Boötis
@@ -56,12 +52,10 @@ Asellus Australis,δ Cancri
 Tegmine,ζ¹ Cancri
 Cor Caroli,α Canum Venaticorum
 Chara,α² Canum Venaticorum
-Asterion,β Canum Venaticorum
 Chara,β Canum Venaticorum
 La Superba,υ Canum Venaticorum
 Sirius,α Canis Majoris
 Mirzam,β Canis Majoris
-Murzim,β Canis Majoris
 Muliphein,γ Canis Majoris
 Wezen,δ Canis Majoris
 Adhara,ε Canis Majoris
@@ -75,7 +69,6 @@ Al Giedi,α¹ Capricorni
 Dabih,β¹ Capricorni
 Nashira,γ Capricorni
 Deneb Algedi,δ Capricorni
-Scheddi,δ Capricorni
 Kastra,ε Capricorni
 Armus,η Capricorni
 Alshat,ν Capricorni
@@ -97,13 +90,10 @@ Hadar,β Centauri
 Menkent,θ Centauri
 Alderamin,α Cephei
 Alfirk,β Cephei
-Alrai,γ Cephei
 Errai,γ Cephei
 Garnet Star,μ Cephei
-Alkurah,ξ Cephei
 Kurhah,ξ Cephei
 Al Kalb al Rai,ρ2 Cephei
-Menkab,α Ceti
 Menkar,α Ceti
 Diphda,β Ceti
 Kaffaljidhma,γ Ceti
@@ -117,7 +107,6 @@ Al Kurud,θ Columbae
 Diadem,α Comae Berenices
 Alfecca Meridiana,α Coronae Australis
 Alphecca,α Coronae Borealis
-Gemma,α Coronae Borealis
 Nusakan,β Coronae Borealis
 Alchiba,α Corvi
 Kraz,β Corvi
@@ -140,10 +129,8 @@ Rotanev,β Delphini
 Deneb Dulfim,ε Delphini
 Fafnir,42 Draconis
 Thuban,α Draconis
-Alwaid,β Draconis
 Rastaban,β Draconis
 Eltanin,γ Draconis
-Aldib,δ Draconis
 Altais,δ Draconis
 Tyl,ε Draconis
 Aldhibain,ζ Draconis
@@ -174,7 +161,6 @@ Wasat,δ Geminorum
 Mebsuta,ε Geminorum
 Mekbuda,ζ Geminorum
 Propus,η Geminorum
-Tejat Prior,η Geminorum
 Tejat Posterior,μ Geminorum
 Alzir,ξ Geminorum
 Alnair,α Gruis
@@ -192,11 +178,9 @@ Head of Hydrus,α Hydri
 Regulus,α Leonis
 Denebola,β Leonis
 Algieba,γ¹ Leonis
-Duhr,δ Leonis
 Zosma,δ Leonis
 Ras Elased Australis,ε Leonis
 Adhafera,ζ Leonis
-Aldhafera,ζ Leonis
 Chertan,θ Leonis
 Al Minliar al Asad,κ Leonis
 Alterf,λ Leonis
@@ -219,7 +203,6 @@ Alathfar,μ Lyrae
 Polaris Australis,σ Octantis
 Rasalhague,α Ophiuchi
 Cebalrai,β Ophiuchi
-Cheleb,β Ophiuchi
 Yed Prior,δ Ophiuchi
 Yed Posterior,ε Ophiuchi
 Sabik,η Ophiuchi
@@ -233,7 +216,6 @@ Alnilam,ε Orionis
 Alnitak,ζ Orionis
 Nair Al Saif,ι Orionis
 Saiph,κ Orionis
-Heka,λ Orionis
 Meissa,λ Orionis
 Tabit,π³ Orionis
 Thabit,υ Orionis
@@ -245,7 +227,6 @@ Algenib,γ Pegasi
 Enif,ε Pegasi
 Homam,ζ Pegasi
 Matar,η Pegasi
-Baham,θ Pegasi
 Biham,θ Pegasi
 Sadalbari,μ Pegasi
 Salm,τ Pegasi
@@ -266,17 +247,13 @@ Naos,ζ Puppis
 Azmidiske,ξ Puppis
 Tureis,ρ Puppis
 Sham,α Sagittae
-Alrami,α Sagittarii
 Rukbat,α Sagittarii
 Arkab Posterior,β² Sagittarii
 Arkab Prior,β¹ Sagittarii A
 Alnasl,γ² Sagittarii
-Nash,γ² Sagittarii
 Kaus Media,δ Sagittarii
-Media,δ Sagittarii
 Kaus Australis,ε Sagittarii
 Ascella,ζ Sagittarii
-Askella,ζ Sagittarii
 Kaus Borealis,λ Sagittarii
 Albaldah,π Sagittarii
 Nunki,σ Sagittarii
@@ -311,7 +288,6 @@ Hyadum II,δ¹ Tauri
 Ain,ε Tauri
 Tien Kwan,ζ Tauri
 Alcyone,η Tauri
-Elmuthalleth,α Trianguli
 Mothallah,α Trianguli
 Atria,α Trianguli Australis
 Betria,β Trianguli Australis
@@ -326,9 +302,7 @@ Megrez,δ Ursae Majoris
 Alioth,ε Ursae Majoris
 Mizar,ζ Ursae Majoris
 Alkaid,η Ursae Majoris
-Benetnasch,η Ursae Majoris
 Sarir,θ Ursae Majoris
-Dnoces,ι Ursae Majoris
 Talitha,ι Ursae Majoris
 Talitha Australis,κ Ursae Majoris
 Tania Borealis,λ Ursae Majoris
@@ -341,17 +315,13 @@ Al Kaphrah,χ Ursae Majoris
 Polaris,α Ursae Minoris
 Kochab,β Ursae Minoris
 Pherkad,γ Ursae Minoris
-Pherkard,δ Ursae Minoris
 Yildun,δ Ursae Minoris
 Regor,γ Velorum
 Suhail,λ Velorum
 Spica,α Virginis
-Alaraph,β Virginis
 Zavijava,β Virginis
-Arich,γ Virginis
 Porrima,γ Virginis
 Auva,δ Virginis
-Minelava,δ Virginis
 Vindemiatrix,ε Virginis
 Heze,ζ Virginis
 Zaniah,η Virginis

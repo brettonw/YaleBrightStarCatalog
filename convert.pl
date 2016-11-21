@@ -147,9 +147,9 @@ while (my $entry = <$fh>) {
 
     # add the RA/Dec consolidated fields
     $entry .= appendJson ("RA1900", "$fields[12]h $fields[13]m $fields[14]s", 1);
-    $entry .= appendJson ("DEC1900", "$fields[15]$fields[16]° $fields[17]′ $fields[18]″", 1);
+    $entry .= appendJson ("Dec1900", "$fields[15]$fields[16]° $fields[17]′ $fields[18]″", 1);
     $entry .= appendJson ("RA", "$fields[19]h $fields[20]m $fields[21]s", 1);
-    $entry .= appendJson ("DEC", "$fields[22]$fields[23]° $fields[24]′ $fields[25]″", 1);
+    $entry .= appendJson ("Dec", "$fields[22]$fields[23]° $fields[24]′ $fields[25]″", 1);
 
     # add all the rest of the fields
     for (my $i = 26; $i < 52; $i++) {

@@ -4,12 +4,16 @@ http://tdc-www.harvard.edu/catalogs/bsc5.html) to a JSON format.
 
 The JSON file is available at: https://brettonw.github.io/YaleBrightStarCatalog/bsc5.json
 
-Fields in the JSON (empty fields in the original source are omitted):
+Fields in the JSON (empty fields are omitted):
 
 | Field | Description |
 | ----- | ----------- |
 | HR | Harvard Revised Number = Bright Star Number |
-| Name | Name, generally Bayer and/or Flamsteed name |
+| Flamsteed Abbr| Flamsteed designation with 3-letter abbreviated constellation name | 
+| Flamsteed Full| Flamsteed designation with full genitive form constellation name | 
+| Bayer Abbr| Bayer designation with greek letter order and 3-letter abbreviated constellation name | 
+| Bayer Full| Bayer designation with spelled out greek letter order and genitive form constellation name | 
+| Common | The common name of the star (drawn from IAU designations and notes) |
 | DM | Durchmusterung Identification |
 | HD | Henry Draper Catalog Number |
 | SAO | SAO Catalog Number |
@@ -50,7 +54,7 @@ Fields in the JSON (empty fields in the original source are omitted):
 | Sep | Separation of components in Dmag if occultation binary |
 | MultID | Identifications of components in Dmag |
 | MultCnt | Number of components assigned to a multiple |
-| Notes | Notes, as (Category, Sequence, Remark)  |
+| Notes | Notes, as (Category, Remark)  |
 
 
-Note: I've taken the liberty of consolidating the RA and Dec fields.
+Note: I've taken the liberty of consolidating the RA and Dec fields, and using Unicode for the Greek letters in Bayer abbreviated designations.

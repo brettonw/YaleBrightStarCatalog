@@ -54,7 +54,7 @@ Fields in the JSON (empty fields are omitted):
 | Sep | Separation of components in Dmag if occultation binary |
 | MultID | Identifications of components in Dmag |
 | MultCnt | Number of components assigned to a multiple |
-| Notes | Notes, as (Category, Remark)  |
+| Notes | Notes, consolidated, as (Category, Remark)  |
 
 
 Note: I've taken the liberty of consolidating the RA and Dec fields, and using Unicode for the Greek letters in Bayer abbreviated designations.

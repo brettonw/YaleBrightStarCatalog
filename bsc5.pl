@@ -13,26 +13,6 @@ use open ":std", ":encoding(UTF-8)";
 # yes, yes - all you perl gurus, this is abuse. I just want to include code I wrote, alright?
 require ("common.pl");
 
-# download the bsc5.dat and bsc5.notes files from http://tdc-www.harvard.edu/catalogs/bsc5.html, and
-# gunzip them into the "unpacked" directory
-
-# command line or file for the inputs
-if (scalar(@ARGV) > 0) {
-    foreach my $arg (@ARGV) {
-        foreach my $field (split(/,/, $arg)) {
-            my $asField = $field;
-            if ($field =~ /^([^=]+)=([^=]+)$/) {
-                $field = $1;
-                $asField = $2;
-            }
-            $field = chew ($field);
-            $asField = chew ($asField);
-            $appendJsonAs{$field} = $asField;
-            print STDERR "($field) = ($asField)\n"
-        }
-    }
-}
-
 # common variables
 my $fh;
 my $filename;
@@ -181,6 +161,49 @@ my %categoryNames = (
     "R" => "Stellar radii or diameters", "RV" => "Radial and/or rotational velocities",
     "S" => "Spectra", "SB" => "Spectroscopic binaries", "VAR" => "Variability"
 );
+
+# download the bsc5.dat and bsc5.notes files from http://tdc-www.harvard.edu/catalogs/bsc5.html, and
+# gunzip them into the "unpacked" directory
+
+# command line or file for the inputs
+if (scalar(@ARGV) > 0) {
+    foreach my $arg (@ARGV) {
+        foreach my $field (split(/,/, $arg)) {
+            my $asField = $field;
+            if ($field =~ /^([^=]+)=([^=]+)$/) {
+                $field = $1;
+                $asField = $2;
+            }
+            # field definitions can be a number (which we replace with a field name), a
+            # range, which we replace with all the field names in that range (1-3), or a
+            # field name. individual numbers or field names can include an "= xxx"
+            # component, where we use the "xxx" portion as the name to display that field
+            # in the output JSON
+            $field = chew ($field);
+            if ($field =~ /^(\d+)\s*-?\s*(\d+)?$/) {
+                if (defined ($2)) {
+                    print STDERR "Matching $1-$2\n";
+                    for (my $i = $1; $i <= $2; $i++) {
+                        my $fieldName = $fieldNames[$i];
+                        $appendJsonAs{$fieldName} = $fieldName;
+                        print STDERR "$fieldName "
+                    }
+                    print STDERR "\n"
+                } else {
+                    $field = $fieldNames[$1];
+                    $asField = chew ($asField);
+                    $appendJsonAs{$field} = $asField;
+                    print STDERR "Matching $1 as ($field) = ($asField)\n"
+                }
+            } else {
+                $asField = chew ($asField);
+                $appendJsonAs{$field} = $asField;
+                print STDERR "($field) = ($asField)\n"
+            }
+        }
+    }
+}
+
 
 #open the JSON array
 print "[\n";

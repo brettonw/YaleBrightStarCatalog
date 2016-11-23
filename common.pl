@@ -135,11 +135,11 @@ sub chew {
 our %appendJsonAs;
 sub appendJson {
     my($key, $value, $comma) = @_;
-    $key = chew ($key);
     $key = (scalar (keys (%appendJsonAs)) == 0) ? $key : $appendJsonAs{$key};
     if (defined ($key)) {
-        $value = chew ($value);
-        return (length ($value) > 0) ? ((($comma > 0) ? ", " : "" )."\"$key\": \"$value\"") : "";
+        $key = "\"$key\"";
+        $value = ($value =~ /^\[/) ? $value : ("\"" . chew ($value) . "\"");
+        return (length ($value) > 0) ? ((($comma > 0) ? ", " : "" ) . "$key: $value") : "";
     }
     return "";
 }

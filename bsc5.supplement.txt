@@ -1,0 +1,9 @@
+Note on SpType: If the complete modern (MK) classification is too long for the data field, it is
+                given in the remarks file and an asterisk (*) occurs in this data field. Mt. Wilson
+                luminosity classes are given as lower case letters in bytes 128-129. The "W" in
+                Wolf-Rayet types is in byte 129 with the C or N in the following byte (130). In
+                general, the temperature class (O, B, A, ..., S, C) occurs in byte 130 and the
+                temperature subclass in byte 131 (intermediate sub-classes extend to 132-133 and
+                other characters can be in bytes 131, ...). Characters normally appearing as lower
+                case in standard notation, e.g. p, e, Si, Mn, Hg, Iab, are coded in lower case. A
+                greek delta appearing for HD 189337 is coded as "@d".

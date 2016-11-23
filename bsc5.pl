@@ -20,15 +20,15 @@ require ("common.pl");
 if (scalar(@ARGV) > 0) {
     foreach my $arg (@ARGV) {
         foreach my $field (split(/,/, $arg)) {
-        my $asField = $field;
-        if ($field =~ /^([^=]+)=([^=]+)$/) {
-            $field = $1;
-            $asField = $2;
-        }
-        $field = chew ($field);
-        $asField = chew ($asField);
-        $appendJsonAs{$field} = $asField;
-        print STDERR "($field) = ($asField)\n"
+            my $asField = $field;
+            if ($field =~ /^([^=]+)=([^=]+)$/) {
+                $field = $1;
+                $asField = $2;
+            }
+            $field = chew ($field);
+            $asField = chew ($asField);
+            $appendJsonAs{$field} = $asField;
+            print STDERR "($field) = ($asField)\n"
         }
     }
 }
@@ -57,10 +57,20 @@ while (my $entry = <$fh>) {
     # every line is of the form (/^\s([\s\d]{4})([\s\d]{2})([\s\w:]{4})\s(.*)/)
     if ($entry =~ /^\s([\s\d]{4})([\s\d]{2})([\s\w:]{4})\s(.*)$/) {
         my ($id, $sequence, $category, $remark) = ($1, $2, $3, $4);
-        $id =~ s/^\s*//; $id =~ s/\s*$//; $id =~ s/(\s)+/$1/g;
-        $sequence =~ s/^\s*//; $sequence =~ s/\s*$//; $sequence =~ s/(\s)+/$1/g;
-        $category =~ s/://; $category =~ s/^\s*//; $category =~ s/\s*$//; $category =~ s/(\s)+/$1/g;
-        $remark =~ s/^\s*//; $remark =~ s/\s*$//; $remark =~ s/(\s)+/$1/g; $remark =~ s/"/\\"/g;
+        $id =~ s/^\s*//;
+        $id =~ s/\s*$//;
+        $id =~ s/(\s)+/$1/g;
+        $sequence =~ s/^\s*//;
+        $sequence =~ s/\s*$//;
+        $sequence =~ s/(\s)+/$1/g;
+        $category =~ s/://;
+        $category =~ s/^\s*//;
+        $category =~ s/\s*$//;
+        $category =~ s/(\s)+/$1/g;
+        $remark =~ s/^\s*//;
+        $remark =~ s/\s*$//;
+        $remark =~ s/(\s)+/$1/g;
+        $remark =~ s/"/\\"/g;
         my $idCat = "$id-$category";
         if ($sequence == 1) {
             $notesByIdCat{$idCat} = $remark;
@@ -147,11 +157,24 @@ my @fieldNames = (
     "Parallax", "RadVel", "n_RadVel", "l_RotVel", "RotVel", "u_RotVel", "Dmag", "Sep", "MultID",
     "MultCnt", "NoteFlag"
 );
-my @delimeterPositions = (
-    4, 14, 25, 31, 37, 41, 42, 43, 44, 49, 51, 60, 62, 64, 68, 69, 71, 73, 75, 77, 79, 83, 84, 86,
-    88, 90, 96, 102, 107, 108, 109, 114, 115, 120, 121, 126, 127, 147, 148, 154, 160, 161, 166, 170,
-    174, 176, 179, 180, 184, 190, 194, 196, 197
+my %fieldIndexes;
+
+for (my $i = 0; $i < scalar (@fieldNames); $i++) {
+    $fieldIndexes{$fieldNames[$i]} = $i;
+}
+
+sub getFieldByIndex {
+    my ($fieldsHashRef, $fieldIndex) = @_;
+    my $fieldName = $fieldNames[$fieldIndex];
+    return exists ($fieldsHashRef->{$fieldName}) ? $fieldsHashRef->{$fieldName} : "";
+}
+
+my @fieldPositions = (
+    1, 5, 15, 26, 32, 38, 42, 43, 44, 45, 50, 52, 61, 63, 65, 69, 70, 72, 74, 76, 78, 80, 84, 85,
+    87, 89, 91, 97, 103, 108, 109, 110, 115, 116, 121, 122, 127, 128, 148, 149, 155, 161, 162, 167,
+    171, 175, 177, 180, 181, 185, 191, 195, 197, 198
 );
+
 my %categoryNames = (
     "C" => "Colors", "D" => "Double and multiple stars", "DYN" => "Dynamical parallaxes",
     "G" => "Group membership", "M" => "Miscellaneous", "N" => "Star names", "P" => "Polarization",
@@ -167,31 +190,31 @@ my $lineCount = 0;
 $filename = "unpacked/bsc5.dat";
 open($fh, "<:encoding(UTF-8)", $filename) or die "Could not open file '$filename' $!";
 while (my $entry = <$fh>) {
-    chomp $entry;
-
-    # insert delimiters between all the fields
+    # pad the entry line, as the original is truncated if not all the fields are present
+    $entry =~ s/\n//;
     $entry = sprintf ("%-200s", $entry);
-    # print STDERR "2) $entry\n";
-    for (my $i = scalar (@delimeterPositions) - 1; $i >= 0; $i--) {
-        if (length ($entry) > $delimeterPositions[$i]) {
-            # print STDERR "Add Delimeter at $delimeterPositions[$i]\n";
-            # $entry = substr $entry, $delimeterPositions[$i], 0, ":";
-            substr $entry, $delimeterPositions[$i], 0, "&";
-            # print STDERR "2x) $entry\n";
+    print STDERR "\nENTRY) $entry\n";
+
+    # get the fields
+    my %fieldsHash;
+    my $fieldsHashRef = \%fieldsHash;
+    for (my $i = 0; $i < scalar (@fieldNames); $i++) {
+        my $fieldIndex = $fieldPositions[$i] - 1;
+        my $fieldLength = ($fieldPositions[$i + 1] - 1) - $fieldIndex;
+        my $fieldValue = chew (substr ($entry, $fieldIndex, $fieldLength));
+        if (length ($fieldValue) > 0) {
+            my $fieldName = $fieldNames[$i];
+            $fieldsHash{$fieldName} = $fieldValue;
+            print STDERR "($fieldName) = ($fieldValue)\n";
         }
     }
-    print STDERR "ENTRY)$entry\n";
-
-    # get all the fields
-    my @fields = split (/&/, $entry);
 
     # figure the id
-    my $id = chew ($fields[0]);
-    my $name = chew ($fields[1]);
+    my $id = $fieldsHash{"HR"};
 
     # skip this line if it is largely empty
-    if (length (chew ($fields[3])) == 0) {
-        print STDERR "Skipping empty line $id, $name\n";
+    if (!exists ($fieldsHash{"HD"})) {
+        print STDERR "Skipping empty line $id\n";
     } else {
         # make sure the JSON output is printed correctly between lines
         if ($lineCount != 0) {
@@ -199,12 +222,25 @@ while (my $entry = <$fh>) {
         }
         $lineCount++;
 
-        # construct the JSON record for the line
-        $entry = "{ " . appendJson ($fieldNames[0], $fields[0], 0);
-
         # set the common name if we already know it, but we will prefer the IAU name if we've got that
-        my $commonName = exists ($commonNames{$id}) ? $commonNames{$id} : "";
+        if (exists ($commonNames{$id})) {
+            $fieldsHash{"Common"} = $commonNames{$id};
+            print STDERR "Common name found in notes ($fieldsHash{'Common'})\n";
+        }
+
+        # try the HD catalog number
+        my $hdn = "HD-".$fieldsHash{"HD"};
+        print STDERR "Trying Draper designation: $hdn\n";
+        if (exists ($starNames{$hdn})) {
+            $fieldsHash{"Common"} = $starNames{$hdn};
+            print STDERR "Matched Draper (HD) designation: $hdn ($fieldsHash{'Common'})\n";
+            $draperMatchCount++;
+        }
+
+        my $name = getFieldByIndex($fieldsHashRef, 1);
+        if (length ($name) > 0)
         {
+            print STDERR ("name ($name)\n");
             # try to get the common name, have to condition the name a bit - it might be a shortened version
             # of a bayer name (Alp Cen) or a flamsteed name (13 Tau), with a few special cases
 
@@ -223,16 +259,14 @@ while (my $entry = <$fh>) {
 
                     # try to find the star name from the flamsteed number
                     my $fn = "$flamsteedNumber $constellationNames{$constellationName}";
-                    $entry .= appendJson ("FlamsteedA", $fn, 1);
-                    $entry .= appendJson ("FlamsteedF", makeFullName($fn), 1);
-                    #if (length ($commonName) == 0) {
+                    $fieldsHash{"FlamsteedA"} = $fn;
+                    $fieldsHash{"FlamsteedF"} = makeFullName($fn);
                     print STDERR "Trying Flamsteed designation: $fn\n";
                     if (exists ($starNames{$fn})) {
-                        $commonName  = $starNames{$fn};
-                        print STDERR "Matched Flamsteed designation: $fn ($commonName)\n";
+                        $fieldsHash{"Common"} = $starNames{$fn};
+                        print STDERR "Matched Flamsteed designation: $fn ($fieldsHash{'Common'})\n";
                         $flamsteedMatchCount++;
                     }
-                    #}
                 }
 
                 # now try to find the star name using the bayer number
@@ -247,80 +281,51 @@ while (my $entry = <$fh>) {
 
                     # try to find the star name from the bayer number
                     my $bn = "$greekNames{$bayerNumber}$sequence $constellationNames{$constellationName}";
-                    $entry .= appendJson ("BayerA", $bn, 1);
-                    $entry .= appendJson ("BayerF", makeFullName ($bn), 1);
-                    #if (length ($commonName) == 0) {
+                    $fieldsHash{"BayerA"} = $bn;
+                    $fieldsHash{"BayerF"} = makeFullName ($bn);
                     print STDERR "Trying Bayer designation: $bn\n";
                     if (exists ($starNames{$bn})) {
-                        $commonName = $starNames{$bn};
-                        print STDERR "Matched Bayer designation: $bn ($commonName)\n";
+                        $fieldsHash{"Common"} = $starNames{$bn};
+                        print STDERR "Matched Bayer designation: $bn ($fieldsHash{'Common'})\n";
                         $bayerMatchCount++;
                     }
-                    #}
                 }
             }
-
-            # now try the HD catalog number
-            my $hdn = "HD-" . chew ($fields[3]);
-            print STDERR "Trying Draper designation: $hdn\n";
-            if (exists ($starNames{$hdn})) {
-                $commonName = $starNames{$hdn};
-                print STDERR "Matched Draper (HD) designation: $hdn ($commonName)\n";
-                $draperMatchCount++;
-            }
-        }
-        $entry .= appendJson ("Common", $commonName, 1);
-
-        # add the fields up to the RA/Dec fields
-        for (my $i = 2; $i < 12; $i++) {
-            $entry .= appendJson ($fieldNames[$i], $fields[$i], 1);
         }
 
         # add the RA/Dec consolidated fields
-        $entry .= appendJson ("RA1900", "$fields[12]h $fields[13]m $fields[14]s", 1);
-        $entry .= appendJson ("Dec1900", "$fields[15]$fields[16]° $fields[17]′ $fields[18]″", 1);
-        $entry .= appendJson ("RA", "$fields[19]h $fields[20]m $fields[21]s", 1);
-        $entry .= appendJson ("Dec", "$fields[22]$fields[23]° $fields[24]′ $fields[25]″", 1);
-
-        # add the fields up to the epctral type
-        for (my $i = 26; $i < 37; $i++) {
-            $entry .= appendJson ($fieldNames[$i], $fields[$i], 1);
-        }
+        $fieldsHash{"RA1900"} = getFieldByIndex($fieldsHashRef, 12)."h ".getFieldByIndex($fieldsHashRef, 13)."m ".getFieldByIndex($fieldsHashRef, 14)."s";
+        $fieldsHash{"Dec1900"} = getFieldByIndex($fieldsHashRef, 15).getFieldByIndex($fieldsHashRef, 16)."° ".getFieldByIndex($fieldsHashRef, 17)."′ ".getFieldByIndex($fieldsHashRef, 18)."″";
+        $fieldsHash{"RA"} = getFieldByIndex($fieldsHashRef, 19)."h ".getFieldByIndex($fieldsHashRef, 20)."m ".getFieldByIndex($fieldsHashRef, 21)."s";
+        $fieldsHash{"Dec"} = getFieldByIndex($fieldsHashRef, 22).getFieldByIndex($fieldsHashRef, 23)."° ".getFieldByIndex($fieldsHashRef, 24)."′ ".getFieldByIndex($fieldsHashRef, 25)."″";
 
         # condition the spectral type field as: type (only one), luminosity class (only one), and
         # exceptions
-        my $spType = $fields[37];
-        if ($spType =~ s/^.{2}([OBAFGKMSC])//) {
+        my $spType = $fieldsHash{"SpType"};
+        if ($spType =~ s/^[a-z]*([OBAFGKMSC])//) {
             my $spectralClass = $1;
 
             # try to read the sub class, if one is present
             if ($spType =~ s/(\d([-\.]\d)?)//) {
                 $spectralClass .= $1;
             }
-            print STDERR "Spectral Class ($spectralClass) [$fields[37]]\n";
-            $entry .= appendJson ("SpectralCls", $spectralClass, 1);
+            print STDERR "Spectral Class ($spectralClass) [$fieldsHash{'SpType'}]\n";
+            $fieldsHash{"SpectralCls"} = $spectralClass;
 
             # try to read the luminosity class
             if ($spType =~ s/((I[ab]+)|(I[IV]*)|V)//) {
                 my $luminosityClass = $1;
-                print STDERR "Luminosity Class ($luminosityClass) [$fields[37]]\n";
-                $entry .= appendJson ("LuminosityCls", $luminosityClass, 1);
-            }else {
-                print STDERR "UNABLE TO READ LUMINOSITY CLASS ($fields[37])\n";
+                print STDERR "Luminosity Class ($luminosityClass) [$fieldsHash{'SpType'}]\n";
+                $fieldsHash{"LuminosityCls"} = $luminosityClass;
+            } else {
+                print STDERR "UNABLE TO READ LUMINOSITY CLASS ($fieldsHash{'SpType'})\n";
             }
-        }else {
-            print STDERR "UNABLE TO READ SPECTRAL CLASS ($fields[37])\n";
-        }
-
-        # add all the rest of the fields
-        for (my $i = 38; $i < 52; $i++) {
-            $entry .= appendJson ($fieldNames[$i], $fields[$i], 1);
+        } else {
+            print STDERR "UNABLE TO READ SPECTRAL CLASS ($fieldsHash{'SpType'})\n";
         }
 
         # add notes, if any
-        my $notesKey = "Notes";
-        $notesKey = (scalar (keys (%appendJsonAs)) == 0) ? $notesKey : $appendJsonAs{$notesKey};
-        if (($fields[52] eq "*") && exists ($notesById{$id}) && defined ($notesKey)) {
+        if (exists ($fieldsHash{"NoteFlag"}) && ($fieldsHash{"NoteFlag"} eq "*") && exists ($notesById{$id})) {
             # split the notes entry into an array, referring to the idCats
             my @notesForIdByCat = split (/;/, $notesById{$id});
             my $noteArray = "[ ";
@@ -343,10 +348,21 @@ while (my $entry = <$fh>) {
             $noteArray .= " ]";
 
             # output the tag element
-            $entry .= ", \"$notesKey\":" . $noteArray;
+            $fieldsHash{"Notes"} = $noteArray;
         }
 
+        # construct the JSON record for the line
         # close the line and output it
+        my @fieldKeys = sort (keys (%fieldsHash));
+        my $comma = 0;
+        $entry = "{ ";
+        foreach my $fieldKey (@fieldKeys) {
+            my $json = appendJson ($fieldKey, $fieldsHash{$fieldKey}, $comma);
+            if (length ($json) > 0) {
+                $entry .= $json;
+                $comma = 1;
+            }
+        }
         $entry .= " }";
         print "$entry";
     }
@@ -355,7 +371,8 @@ while (my $entry = <$fh>) {
 print "\n]";
 close $fh;
 
+print STDERR "\nSUMMARY\n";
 print STDERR "Matched $flamsteedMatchCount Flamsteed designations\n";
 print STDERR "Matched $bayerMatchCount Bayer designations\n";
 print STDERR "Matched $draperMatchCount Draper designations\n";
-print STDERR "Matched Total (" . ($flamsteedMatchCount + $bayerMatchCount + $draperMatchCount) . ") designations\n";
+print STDERR "Matched Total (".($flamsteedMatchCount + $bayerMatchCount + $draperMatchCount).") designations\n";

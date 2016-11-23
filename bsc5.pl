@@ -162,6 +162,10 @@ my %categoryNames = (
     "S" => "Spectra", "SB" => "Spectroscopic binaries", "VAR" => "Variability"
 );
 
+my %colorTemperatureRanges = (
+    "C" => "2400-6000", "S" => "2400-3700", "M" => "2000-3500", "K" => "3500-5000", "G" => "5000-6000", "F" => "6000-7500", "A" => "7500-10000", "B" => "10000-30000", "O" => "30000-60000"
+);
+
 # download the bsc5.dat and bsc5.notes files from http://tdc-www.harvard.edu/catalogs/bsc5.html, and
 # gunzip them into the "unpacked" directory
 
@@ -345,6 +349,24 @@ while (my $entry = <$fh>) {
             }
         } else {
             print STDERR "UNABLE TO READ SPECTRAL CLASS ($fieldsHash{'SpType'})\n";
+        }
+
+        # add the color temperature (estimated) using the B-V
+        if (exists ($fieldsHash{"B-V"})) {
+            # Ballesteros' formula
+            my $bvScale = 0.92 * $fieldsHash{"B-V"};
+            my $kVal = 4600 * ((1.0 / ($bvScale + 1.7)) + (1.0 / ($bvScale + 0.62)));
+            $fieldsHash{"K"} = sprintf ("%d", $kVal);
+            print STDERR ("Temperature A = " . $kVal . "\n");
+        }
+
+        # add the color (estimated) based on the spectral class (preferred)
+        if (exists ($fieldsHash{"SpectralCls"}) && ($fieldsHash{"SpectralCls"} =~ /([OBAFGKMSC])(\d?)/)) {
+            my ($lowTemp, $highTemp) = split (/-/, $colorTemperatureRanges{$1});
+            my $interp = (length ($2) > 0) ? $2 : 5.0;
+            my $kVal = (($highTemp * (10.0 - $interp)) + ($lowTemp * $interp)) / 10.0;
+            $fieldsHash{"K"} = sprintf ("%d", $kVal);
+            print STDERR ("Temperature B = " . $kVal . "\n");
         }
 
         # add notes, if any

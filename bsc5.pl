@@ -19,8 +19,17 @@ require ("common.pl");
 # command line or file for the inputs
 if (scalar(@ARGV) > 0) {
     foreach my $arg (@ARGV) {
-        my ($field, $asField) = split (/=/, $arg);
+        foreach my $field (split(/,/, $arg)) {
+        my $asField = $field;
+        if ($field =~ /^([^=]+)=([^=]+)$/) {
+            $field = $1;
+            $asField = $2;
+        }
+        $field = chew ($field);
+        $asField = chew ($asField);
         $appendJsonAs{$field} = $asField;
+        print STDERR "($field) = ($asField)\n"
+        }
     }
 }
 
@@ -280,12 +289,27 @@ while (my $entry = <$fh>) {
 
         # condition the spectral type field as: type (only one), luminosity class (only one), and
         # exceptions
-        my $spectralType = chew ($fields[37]);
-        if ($spectralType =~ /([OBAFGKMSC][\+\dmp]([\.-]\d*)?)(.*)/) {
-            #$spectralType = "$1";
-            print STDERR "Spectral Type: $1 ($spectralType)\n";
-        } else {
-            print STDERR "UNABLE TO READ SPECTRAL TYPE ($fields[37])\n";
+        my $spType = $fields[37];
+        if ($spType =~ s/^.{2}([OBAFGKMSC])//) {
+            my $spectralClass = $1;
+
+            # try to read the sub class, if one is present
+            if ($spType =~ s/(\d([-\.]\d)?)//) {
+                $spectralClass .= $1;
+            }
+            print STDERR "Spectral Class ($spectralClass) [$fields[37]]\n";
+            $entry .= appendJson ("SpectralCls", $spectralClass, 1);
+
+            # try to read the luminosity class
+            if ($spType =~ s/((I[ab]+)|(I[IV]*)|V)//) {
+                my $luminosityClass = $1;
+                print STDERR "Luminosity Class ($luminosityClass) [$fields[37]]\n";
+                $entry .= appendJson ("LuminosityCls", $luminosityClass, 1);
+            }else {
+                print STDERR "UNABLE TO READ LUMINOSITY CLASS ($fields[37])\n";
+            }
+        }else {
+            print STDERR "UNABLE TO READ SPECTRAL CLASS ($fields[37])\n";
         }
 
         # add all the rest of the fields
@@ -294,7 +318,9 @@ while (my $entry = <$fh>) {
         }
 
         # add notes, if any
-        if (($fields[52] eq "*") && exists ($notesById{$id})) {
+        my $notesKey = "Notes";
+        $notesKey = (scalar (keys (%appendJsonAs)) == 0) ? $notesKey : $appendJsonAs{$notesKey};
+        if (($fields[52] eq "*") && exists ($notesById{$id}) && defined ($notesKey)) {
             # split the notes entry into an array, referring to the idCats
             my @notesForIdByCat = split (/;/, $notesById{$id});
             my $noteArray = "[ ";
@@ -317,7 +343,7 @@ while (my $entry = <$fh>) {
             $noteArray .= " ]";
 
             # output the tag element
-            $entry .= ", \"Notes\":" . $noteArray;
+            $entry .= ", \"$notesKey\":" . $noteArray;
         }
 
         # close the line and output it

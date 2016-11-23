@@ -136,8 +136,8 @@ our %appendJsonAs;
 sub appendJson {
     my($key, $value, $comma) = @_;
     $key = chew ($key);
-    $key = (scalar (%appendJsonAs) == 0) ? $key : $appendJsonAs{$key};
-    if (length ($key) > 0) {
+    $key = (scalar (keys (%appendJsonAs)) == 0) ? $key : $appendJsonAs{$key};
+    if (defined ($key)) {
         $value = chew ($value);
         return (length ($value) > 0) ? ((($comma > 0) ? ", " : "" )."\"$key\": \"$value\"") : "";
     }

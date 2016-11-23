@@ -2,25 +2,25 @@
 This is a perl script to convert the Yale Bright Star Catalog from ASCII format (found at 
 http://tdc-www.harvard.edu/catalogs/bsc5.html) to a JSON format.
 
-The JSON file is available at: https://brettonw.github.io/YaleBrightStarCatalog/bsc5.json
+The Full JSON file is available at: https://brettonw.github.io/YaleBrightStarCatalog/bsc5.json
 
-Fields in the JSON (empty fields are omitted):
+Fields in the Full JSON file (empty fields are omitted):
 
 | Field | Description |
 | ----- | ----------- |
 | HR | Harvard Revised Number = Bright Star Number |
-| Flamsteed Abbr| Flamsteed designation with 3-letter abbreviated constellation name | 
-| Flamsteed Full| Flamsteed designation with full genitive form constellation name | 
-| Bayer Abbr| Bayer designation with greek letter order and 3-letter abbreviated constellation name | 
-| Bayer Full| Bayer designation with spelled out greek letter order and genitive form constellation name | 
+| FlamsteedA| Flamsteed designation with 3-letter abbreviated constellation name | 
+| FlamsteedF| Flamsteed designation with full genitive form constellation name | 
+| BayerA| Bayer designation with greek letter order and 3-letter abbreviated constellation name | 
+| BayerF| Bayer designation with spelled out greek letter order and genitive form constellation name | 
 | Common | The common name of the star (drawn from IAU designations and notes) |
 | DM | Durchmusterung Identification |
 | HD | Henry Draper Catalog Number |
 | SAO | SAO Catalog Number |
-| FK5 | FK5 star Number |
+| FK5 | FK5 Star Number |
 | IRflag | I if infrared source |
 | r_IRflag | Coded reference for infrared source |
-| Multiple | [AWDIRS] Double or multiple-star code |
+| Multiple | Double or multiple-star code |
 | ADS | Aitken's Double Star Catalog (ADS) designation |
 | ADScomp | ADS number components |
 | VarID | Variable star identification |
@@ -56,5 +56,8 @@ Fields in the JSON (empty fields are omitted):
 | MultCnt | Number of components assigned to a multiple |
 | Notes | Notes, consolidated, as (Category, Remark)  |
 
-
 Note: I've taken the liberty of consolidating the RA and Dec fields, and using Unicode for the Greek letters in Bayer abbreviated designations.
+
+There are several other files available, including:
+* A short form of BSC5 (https://brettonw.github.io/YaleBrightStarCatalog/bsc5-short.json)
+* Almanac Bright Stars 2016 (https://brettonw.github.io/YaleBrightStarCatalog/almanac-2016.json)

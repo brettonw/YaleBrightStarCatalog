@@ -274,10 +274,10 @@ while (my $entry = <$fh>) {
             #print STDERR ("name ($name)\n");
             # "74Psi1Psc", "33    Psc", "       ", "11Bet Cas"
             if ($name =~ /([^\d\s]+)$/) {
-                my $constellationName = $1;
+                my $constellationName = $constellationNames{$1};
                 #print STDERR "Constellation Name ($constellationName)\n";
                 $name =~ s/\s*[^\d\s]+$//;
-                $fieldsHash{"Constellation"} = $constellationNames{$constellationName};
+                $fieldsHash{"Constellation"} = $constellationName;
 
                 # try to find the star name using the flamsteed number
                 #print STDERR ("name ($name)\n");
@@ -285,9 +285,9 @@ while (my $entry = <$fh>) {
                     my $flamsteedNumber = $1;
                     $name =~ s/^\d+\s*//;
                     $fieldsHash{"Flamsteed"} = $flamsteedNumber;
-
+                    $fieldsHash{"FlamsteedF"} = "$flamsteedNumber $constellationFullNames{$constellationName}";
                     # try to find the star name from the flamsteed number
-                    my $fn = "$flamsteedNumber $constellationNames{$constellationName}";
+                    my $fn = "$flamsteedNumber $constellationName";
                     print STDERR "Trying Flamsteed designation: $fn\n";
                     if (exists ($starNames{$fn})) {
                         $fieldsHash{"Common"} = $starNames{$fn};
@@ -307,9 +307,10 @@ while (my $entry = <$fh>) {
                     my $sequence = ($name =~ /^(\d)/) ? ($superscripts[$1 - 1]) : "";
                     $bayerNumber = "$greekNames{$bayerNumber}$sequence";
                     $fieldsHash{"Bayer"} = $bayerNumber;
+                    $fieldsHash{"BayerF"} = "$bayerNumber $constellationFullNames{$constellationName}";
 
                     # try to find the star name from the bayer number
-                    my $bn = "$bayerNumber $constellationNames{$constellationName}";
+                    my $bn = "$bayerNumber $constellationName";
                     print STDERR "Trying Bayer designation: $bn\n";
                     if (exists ($starNames{$bn})) {
                         $fieldsHash{"Common"} = $starNames{$bn};

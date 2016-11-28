@@ -2,17 +2,24 @@
 This is a perl script to convert the Yale Bright Star Catalog from ASCII format (found at 
 http://tdc-www.harvard.edu/catalogs/bsc5.html) to a JSON format.
 
-The Full JSON file is available at: https://brettonw.github.io/YaleBrightStarCatalog/bsc5.json
+There are several versions of this file processed for use:
 
-Fields in the Full JSON file (empty fields are omitted):
+| File | Description | URL |
+| ---- | ----------- | --- |
+| bsc5.json | Most BSC fields, with RA/Dec values consolidated, Notes consolidated, and computed values for MKK spectral and luminosity classes (including approximate color temperature) | https://brettonw.github.io/YaleBrightStarCatalog/bsc5.json |
+| bsc5-orig.json | Original BSC fields as found in bsc5.readme.txt | https://brettonw.github.io/YaleBrightStarCatalog/bsc5-orig.json |
+| bsc5-all.json | All original BSC fields as found in bsc5.readme.txt, and all consolidated and computed fields | https://brettonw.github.io/YaleBrightStarCatalog/bsc5-all.json |
+| bsc5-short.json | Short version of the BSC with RA/Dec, K, and name values (B, F, C, N) | https://brettonw.github.io/YaleBrightStarCatalog/bsc5-orig.json |
+
+Fields in the Original BSC5 file (empty fields are omitted):
 
 | Field | Description |
 | ----- | ----------- |
 | HR | Harvard Revised Number = Bright Star Number |
-| FlamsteedA| Flamsteed designation with 3-letter abbreviated constellation name | 
+| Flamsteed| Flamsteed number, to be taken with the constellation name | 
 | FlamsteedF| Flamsteed designation with full genitive form constellation name | 
-| BayerA| Bayer designation with greek letter order and 3-letter abbreviated constellation name | 
-| BayerF| Bayer designation with spelled out greek letter order and genitive form constellation name | 
+| Bayer| Bayer designation as greek letter with superscript sequence (if multi), to be taken with the constellation name | 
+| BayerF| Bayer designation with spelled out greek letter, sequence, and genitive form constellation name | 
 | Common | The common name of the star (drawn from IAU designations and notes) |
 | DM | Durchmusterung Identification |
 | HD | Henry Draper Catalog Number |
@@ -24,10 +31,20 @@ Fields in the Full JSON file (empty fields are omitted):
 | ADS | Aitken's Double Star Catalog (ADS) designation |
 | ADScomp | ADS number components |
 | VarID | Variable star identification |
-| RA1900 | Right Ascension (00h 00m 00.0s), equinox B1900, epoch 1900.0 |
-| Dec1900 | Declination (+/-00° 00′ 00″), equinox B1900, epoch 1900.0 |
-| RA | Right Ascension (00h 00m 00.0s), equinox J2000, epoch 2000.0 |
-| Dec | Declination (+/-00° 00′ 00″), equinox J2000, epoch 2000.0 |
+| RAh1900 | Hours RA, equinox B1900, epoch 1900.0 |
+| RAm1900 | Minutes RA, equinox B1900, epoch 1900.0 |
+| RAs1900 | Seconds RA, equinox B1900, epoch 1900.0 |
+| DE-1900 | Sign Dec, equinox B1900, epoch 1900.0 |
+| DEd1900 | Degrees Dec, equinox B1900, epoch 1900.0 |
+| DEm1900 | Minutes Dec, equinox B1900, epoch 1900.0 |
+| DEs1900 | Seconds Dec, equinox B1900, epoch 1900.0 |
+| RAh | Hours RA, equinox J2000, epoch 2000.0 |
+| RAm | Minutes RA, equinox J2000, epoch 2000.0 |
+| RAs | Seconds RA, equinox J2000, epoch 2000.0 |
+| DE- | Sign Dec, equinox J2000, epoch 2000.0 |
+| DEd | Degrees Dec, equinox J2000, epoch 2000.0 |
+| DEm | Minutes Dec, equinox J2000, epoch 2000.0 |
+| DEs | Seconds Dec, equinox J2000, epoch 2000.0 |
 | GLON | Galactic longitude |
 | GLAT | Galactic latitude |
 | Vmag | Visual magnitude |
@@ -41,6 +58,9 @@ Fields in the Full JSON file (empty fields are omitted):
 | n_R-I | Code for R-I system (Cousin, Eggen) |
 | SpType | Spectral type |
 | n_SpType | Spectral type code |
+| SpectralCl | The MKK spectral class (OBAFGKMSC) with the numerical sub-class (if present) |
+| LuminosityCls | The MKK luminosity class (I[a,b], II, III, IV, V) |
+| K | An approximate color temperature of the star, computed from B-V or the SpectralCls |
 | pmRA | Annual proper motion in RA J2000, FK5 system |
 | pmDE | Annual proper motion in Dec J2000, FK5 system |
 | n_Parallax | D indicates a dynamical parallax, otherwise a trigonometric parallax |
@@ -56,8 +76,36 @@ Fields in the Full JSON file (empty fields are omitted):
 | MultCnt | Number of components assigned to a multiple |
 | Notes | Notes, consolidated, as (Category, Remark)  |
 
-Note: I've taken the liberty of consolidating the RA and Dec fields, and using Unicode for the Greek letters in Bayer abbreviated designations.
+Computed Fields (empty fields are omitted):
 
-There are several other files available, including:
-* A short form of BSC5 (https://brettonw.github.io/YaleBrightStarCatalog/bsc5-short.json)
+| Field | Description |
+| ----- | ----------- |
+| RA1900 | Right Ascension (00h 00m 00.0s), equinox B1900, epoch 1900.0 |
+| Dec1900 | Declination (+/-00° 00′ 00″), equinox B1900, epoch 1900.0 |
+| RA | Right Ascension (00h 00m 00.0s), equinox J2000, epoch 2000.0 |
+| Dec | Declination (+/-00° 00′ 00″), equinox J2000, epoch 2000.0 |
+| Flamsteed| Flamsteed number, to be taken with the constellation name | 
+| FlamsteedF| Flamsteed designation with full genitive form constellation name | 
+| Bayer| Bayer designation as greek letter with superscript sequence (if multi), to be taken with the constellation name | 
+| BayerF| Bayer designation with spelled out greek letter, sequence, and genitive form constellation name | 
+| Constellation | The traditional 3-letter abbreviation for the constellation name |
+| Common | The common name of the star (drawn from IAU designations and notes) |
+| SpectralCl | The MKK spectral class (OBAFGKMSC) with the numerical sub-class (if present) |
+| LuminosityCls | The MKK luminosity class (Ia,Ib, II, III, IV, V) |
+| K | An approximate color temperature of the star, computed from B-V or the SpectralCls |
+
+Fields in the Short BSC5 file (empty fields are omitted):
+
+| Field | Description |
+| ----- | ----------- |
+| HR | Harvard Revised Number = Bright Star Number |
+| F| Flamsteed number, to be taken with the constellation name | 
+| B| Bayer designation as greek letter with superscript sequence (if multi), to be taken with the constellation name | 
+| N | The common name of the star (drawn from IAU designations and notes) |
+| C | The traditional 3-letter abbreviation for the constellation name |
+| RA | Right Ascension (00h 00m 00.0s), equinox J2000, epoch 2000.0 |
+| Dec | Declination (+/-00° 00′ 00″), equinox J2000, epoch 2000.0 |
+| K | An approximate color temperature of the star, computed from B-V or the SpectralCls |
+
+See also:
 * Almanac Bright Stars 2016 (https://brettonw.github.io/YaleBrightStarCatalog/almanac-2016.json)

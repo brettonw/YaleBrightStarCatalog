@@ -277,17 +277,17 @@ while (my $entry = <$fh>) {
                 my $constellationName = $1;
                 #print STDERR "Constellation Name ($constellationName)\n";
                 $name =~ s/\s*[^\d\s]+$//;
+                $fieldsHash{"Constellation"} = $constellationNames{$constellationName};
 
                 # try to find the star name using the flamsteed number
                 #print STDERR ("name ($name)\n");
                 if ($name =~ /^(\d+)/) {
                     my $flamsteedNumber = $1;
                     $name =~ s/^\d+\s*//;
+                    $fieldsHash{"Flamsteed"} = $flamsteedNumber;
 
                     # try to find the star name from the flamsteed number
                     my $fn = "$flamsteedNumber $constellationNames{$constellationName}";
-                    $fieldsHash{"FlamsteedA"} = $fn;
-                    $fieldsHash{"FlamsteedF"} = makeFullName($fn);
                     print STDERR "Trying Flamsteed designation: $fn\n";
                     if (exists ($starNames{$fn})) {
                         $fieldsHash{"Common"} = $starNames{$fn};
@@ -305,11 +305,11 @@ while (my $entry = <$fh>) {
                     #print STDERR ("name ($name)\n");
 
                     my $sequence = ($name =~ /^(\d)/) ? ($superscripts[$1 - 1]) : "";
+                    $bayerNumber = "$greekNames{$bayerNumber}$sequence";
+                    $fieldsHash{"Bayer"} = $bayerNumber;
 
                     # try to find the star name from the bayer number
-                    my $bn = "$greekNames{$bayerNumber}$sequence $constellationNames{$constellationName}";
-                    $fieldsHash{"BayerA"} = $bn;
-                    $fieldsHash{"BayerF"} = makeFullName ($bn);
+                    my $bn = "$bayerNumber $constellationNames{$constellationName}";
                     print STDERR "Trying Bayer designation: $bn\n";
                     if (exists ($starNames{$bn})) {
                         $fieldsHash{"Common"} = $starNames{$bn};

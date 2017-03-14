@@ -1,0 +1,352 @@
+Common Name;Mag.;Size;Area;NGC;Type;Const.;VQ;R.A. (E2000);Dec. (E2000)
+NGC 281 in Cassiopeia;7.0;35;962;0281;Nebula with dust low brightness;Cas;B;00h 52m 48s;56d 37' N
+NGC 346 in Tucana SMC;10.3;14;154;0346;Open cluster with nebulosity SMC;Tuc;C;00h 59m 06s;72° 11' S
+IC 1805 in Cassiopeia;6.0;60;2,827;;Cluster with nebulosity;Cas;;02h 32m 42s;61° 27' N
+IC 1848 in Cassiopeia;6.0;60;2,827;;Cluster with nebulosity;Cas;;02h 51m 12s;60° 26' N
+IC 348 in Perseus;7.0;10;78.5;;Bright nebula;Per;;03h 44m 30s;32° 17' N
+Maia Nebula in Taurus (Pleiades);3.9;30;707;1432;Reflection nebula faint;Tau;c;03h 45m 48s;24° 22' N
+Merope Nebula in Taurus (Pleiades);4.2;30;707;1435;Reflection nebula faint;Tau;;03h 46m 06s;23° 47' N
+California Nebula in Perseus;10.0;145;16,513;1499;Nebula low brightness;Per;;04h 00m 42s;36° 37' N
+NGC 1579 in Perseus;?;12;113;1579;Reflection nebula bright;Per;;04h 30m 12s;35° 16' N
+NGC 1624 in Perseus;10.4;5;19.6;1624;Nebula surrounds group of stars;Per;C;04h 40m 24s;50° 27' N
+NGC 1770 in Doradus LMC;9.0;;;1770;Open cluster with nebulosity LMC;Dor;;04h 57m 00s;68° 25' S
+NGC 1829 in Doradus LMC;8.0;;;1829;Open cluster with nebulosity LMC;Dor;;05h 04m 42s;68° 03' S
+NGC 1955 in Doradus LMC;9.0;;;1955;Open cluster with nebulosity LMC;Dor;;05h 26m 06s;67° 29' S
+NGC 1962 in Doradus LMC;8.0;;;1962;Open cluster with nebulosity LMC;Dor;;05h 26m 30s;68° 47' S
+NGC 1966 in Doradus LMC;?;13;133;1966;Nebula bright LMC;Dor;;05h 26m 48s;68° 49' S
+NGC 1968 in Doradus LMC;9.0;;;1968;Open cluster with nebulosity LMC;Dor;;05h 27m 12s;67° 26' S
+NGC 1983 in Doradus LMC;8.0;;;1983;Open cluster with nebulosity LMC;Dor;;05h 27m 30s;68° 57' S
+NGC 1974 in Doradus LMC;9.0;;;1974;Open cluster with nebulosity LMC;Dor;;05h 27m 54s;67° 24' S
+NGC 2011 in Doradus LMC;9.0;;;2011;Open cluster with nebulosity LMC;Dor;;05h 32m 06s;67° 31' S
+NGC 2014 in Doradus LMC;8.0;;;2014;Open cluster with nebulosity LMC;Dor;;05h 32m 12s;67° 40' S
+M1, Crab Nebula in Taurus;8.4;6;28.3;1952;Nebula;Tau;B;05h 34m 30s;22° 01' N
+M42, Great Nebula in Orion;4.0;66;3,421;1976;Nebula;Ori;A;05h 35m 24s;05° 27' S
+NGC 1980 in Orion;2.8;14;153.9;1980;Nebula low brightness around Iota Orionis;Ori;c;05h 35m 24s;05° 54' S
+M43 in Orion;9.0;20;314;1982;Nebula bright with dust;Ori;C;05h 35m 36s;05° 16' S
+Tarantula Nebula in Doradus;8.2;40;1,257;2070;Nebula with dust;Dor;B;05h 38m 36s;69° 05' S
+IC 434, Horsehead Nebula in Orion;?;60;2,827;;Nebula;Ori;;05h 41m 00s;02° 24' S
+M78 in Orion;8.0;8;50.3;2068;Reflection nebula bright;Ori;C;05h 46m 42s;00° 03' N
+NGC 2175 in Orion;6.8;18;254.5;2175;Nebula with dust;Ori;C;06h 09m 48s;20° 18' N
+Christmas Tree + Cone Neb. in Monoceros;3.9;60;2,827;2264;Open cluster with nebulosity;Mon;B;06h 41m 06s;09° 53' N
+NGC 2362 in Canis Major;4.1;8;50.3;2362;Open cluster dense;CMa;A;07h 18m 48s;24° 57' S
+NGC 2467 in Puppis;7.0;16;201;2467;Nebula + Open Cluster;Pup;B;07h 52m 36s;26° 23' S
+NGC 2579 in Puppis;7.5;10;78.5;2579;Emission nebula;Pup;C;08h 21m 06s;36° 11' S
+NGC 3199 in Carina;11.1;22;380;3199;Nebula bright;Car;;10h 17m 06s;57° 55' S
+NGC 3247 in Carina;7.6;7;38.5;3247;Open cluster with nebulosity;Car;C;10h 25m 54s;57° 56' S
+NGC 3293 in Carina;4.7;40;1,257;3293;Open cluster rich;Car;A;10h 35m 48s;58° 14' S
+NGC 3324 in Carina;6.7;16;201;3324;Nebula + Open Cluster;Car;B;10h 37m 18s;58° 38' S
+Keyhole Nebula in Carina;6.2;120;11,310;3372;Nebula bright with dust + O.C. (Eta Carina);Car;;10h 43m 48s;59° 52' S
+NGC 3503 in Carina;10.5;3;7;3503;Emission nebula;Car;;11h 01m 18s;59° 51' S
+NGC 3572 in Carina;6.6;20;314;3572;Open cluster with nebulosity;Car;B;11h 10m 24s;60° 14' S
+NGC 3603 in Carina;9.1;12;113;3603;Open cluster with nebulosity;Car;D;11h 15m 06s;61° 15' S
+IC 2944 in Centaurus;4.0;75;4,418;;Cluster with Nebulosity;Cen;;11h 36m 36s;63° 02' S
+NGC 6231 in Scorpius;2.6;15;177;6231;Nebula + Bright scattered O. Cluster;Sco;A;16h 54m 00s;41° 48' S
+NGC 6281 in Scorpius;5.4;60;2,827;6281;Nebula + Open cluster dense;Sco;B;17h 04m 48s;37° 54' S
+NGC 6883 in Scorpius;5.5;80;5,027;6883;Nebula + Open cluster rich;Sco;c;17h 34m 48s;32° 34' S
+M20, Trifid Nebula in Sagittarius;6.3;29;661;6514;Nebula with dust;Sgr;B;18h 02m 18s;23° 02' S
+M8, Lagoon Nebula in Sagittarius;5.8;90;6,362;6523;Nebula with dust and cluster;Sgr;B;18h 03m 48s;24° 23' S
+M16, Eagle Nebula in Serpens;6.0;35;962;6611;Nebula with dust and cluster;Ser;B;18h 18m 48s;13° 47' S
+M17, Omega Nebula in Sagittarius;6.0;46;1,662;6618;Nebula + Open Cluster;Sgr;B;18h 20m 48s;16° 11' S
+Veil Nebula in Cygnus;5.0;70;3,848;6960;Filamentary Nebula;Cyg;;20h 45m 42s;30° 43' N
+Network Nebula in Cygnus;5.0;60;2,827;6992;Filamentary Nebula;Cyg;;20h 56m 24s;31° 43' N
+North America Nebula in Cygnus;6.0;120;11,310;7000;Nebula with dust;Cyg;b;20h 58m 48s;44° 20' N
+NGC 7023 in Cepheus;7.0;18;254;7023;Nebula with dust;Cep;B;21h 00m 30s;68° 10' N
+IC 1396 in Cepheus;3.0;170;22,698;;Nebula + Open Cluster;Cep;b;21h 39m 06s;57° 30' N
+IC 5146 in Cygnus;7.0;12;113;;Nebula + Open Cluster;Cyg;c;21h 53m 24s;47° 16' N
+
+
+
+M077(NGC1068) Cet 8.8 02h 42' -00d 01' 10 3.5'x3'
+M074(NGC628) Psc 9.2 01h 36' 15d 46' 10 5.2'x4.8'
+M033(NGC598) Tri 5.7 01h 33' 30d 38' 4 35.4'x20.8' Triangulum Galaxy/Pinwheel galaxy
+M031(NGC224) And 3.5 00h 42' 41d 15' 4 95.3'x30.8' Andromeda Galaxy
+M032(NGC221) And 8.2 00h 42' 40d 52' 4 4.3'x3.2' Satellite galaxy of Andromeda
+M110(NGC205) And 8 00h 40' 41d 40' 4 10.9'x5.5' Satellite galaxy of Andromeda
+M052(NGC7654) Cas 6.9 23h 24' 61d 34' 3 13'
+M103(NGC581) Cas 7.4 01h 33' 60d 41' 1 6'
+M076(NGC650) Per 12 01h 42' 51d 33' 1 4.8' Butterfly Nebula/Little Dumbbell Nebula/Barbell Nebula/Cork Nebula
+M034(NGC1039) Per 5.2 02h 41' 42d 46' 4 35'
+M045(M45) Tau 1.6 03h 46' 24d 06' 4 110' Pleiades
+M079(NGC1904) Lep 8 05h 24' -24d 32' 19 8.7'
+M042(NGC1976) Ori 4 05h 35' -05d 26' 11 66' Great Nebula In Orion/Trapezium
+M043(NGC1982) Ori 9 05h 35' -05d 16' 11 20' de Mairan's Nebula
+M078(NGC2068) Ori 8 05h 46' 00d 03' 11 8'
+M001(NGC1952) Tau 8.4 05h 34' 22d 00' 5 6' Crab Nebula
+M035(NGC2168) Gem 5.1 06h 08' 24d 20' 5 28'
+M037(NGC2099) Aur 5.6 05h 52' 32d 33' 5 24'
+M036(NGC1960) Aur 6 05h 36' 34d 07' 5 12'
+M038(NGC1912) Aur 6.4 05h 28' 35d 50' 5 21'
+M041(NGC2287) CMa 4.5 06h 46' -20d 44' 19 38'
+M093(NGC2447) Pup 6.2 07h 44' -23d 52' 19 22'
+M047(NGC2422) Pup 4.4 07h 36' -14d 30' 12 30'
+M046(NGC2437) Pup 6.1 07h 41' -14d 49' 12 27'
+M050(NGC2323) Mon 5.9 07h 03' -08d 19' 12 16'
+M048(NGC2548) Hya 5.8 08h 13' -05d 47' 12 54'
+M044(NGC2632) Cnc 3.1 08h 40' 19d 59' 12 95' Beehive Cluster/Praesepe
+M067(NGC2682) Cnc 6.9 08h 50' 11d 49' 12 30'
+M095(NGC3351) Leo 9.7 10h 43' 11d 42' 13 3.7'x2.5'
+M096(NGC3368) Leo 9.2 10h 46' 11d 49' 13 3.8'x2.6'
+M105(NGC3379) Leo 9.3 10h 47' 12d 35' 13 4.5'
+M065(NGC3623) Leo 9.3 11h 18' 13d 04' 13 4.9'x1.4'
+M066(NGC3627) Leo 9 11h 20' 12d 59' 13 4.6'x2.1'
+M081(NGC3031) UMa 6.9 09h 55' 69d 03' 2 13.5'x7.1' Bode's Galaxy or Bode's Nebula
+M082(NGC3034) UMa 8.4 09h 55' 69d 40' 2 5.6'x2.1' The Cigar Galaxy
+M097(NGC3587) UMa 11.2 11h 14' 55d 01' 2 3.2' Owl Nebula
+M108(NGC3556) UMa 10.1 11h 11' 55d 40' 2 4.3'x1.1' Surfboard Galaxy
+M109(NGC3992) UMa 9.8 11h 57' 53d 23' 2 3.8'x2.3'
+M040(M40) UMa 9.1 12h 22' 58d 05' 2 0.8' Winnecke 4
+M106(NGC4258) CVn 8.3 12h 19' 47d 18' 7 9.3'x3.6'
+M094(NGC4736) CVn 8.2 12h 50' 41d 06' 7 5.6'x4.6'
+M063(NGC5055) CVn 8.6 13h 15' 42d 01' 7 6.3'x3.6' Sunflower Galaxy
+M051(NGC5194) CVn 8.4 13h 29' 47d 11' 7 5.6'x3.5' Whirlpool Galaxy
+M101(NGC5457) UMa 7.7 14h 03' 54d 20' 2 26.9' The Pinwheel Galaxy
+M102(NGC5866) Dra 10 15h 06' 55d 46' 2 1.4'x0.9' This is NOT M102, included however for completeness
+M053(NGC5024) Com 7.7 13h 12' 18d 09' 14 12.6'
+M064(NGC4826) Com 8.5 12h 56' 21d 41' 7 5'x2.7' Black-Eye Galaxy
+M003(NGC5272) CVn 6.4 13h 42' 28d 23' 7 16.2'
+M098(NGC4192) Com 10.1 12h 13' 14d 53' 13 4.9'x1.4'
+M085(NGC4382) Com 9.2 12h 25' 18d 10' 13 7.1'
+M099(NGC4254) Com 9.8 12h 18' 14d 24' 13 5.4' Pin-Wheel Nebula
+M100(NGC4321) Com 9.4 12h 22' 15d 49' 13 3.7'x3.1'
+M084(NGC4374) Vir 9.3 12h 25' 12d 53' 13 3.2'x2.8'
+M086(NGC4406) Vir 9.2 12h 26' 12d 56' 13 4.5'x2.9'
+M087(NGC4486) Vir 8.6 12h 30' 12d 24' 14 7.2' Virgo A
+M089(NGC4552) Vir 9.8 12h 35' 12d 33' 14 4.2'
+M090(NGC4569) Vir 9.5 12h 36' 13d 10' 14 4.8'x2.2'
+M088(NGC4501) Com 9.5 12h 32' 14d 24' 14 3.5'x1.9'
+M091(NGC4548) Com 10.2 12h 35' 14d 30' 14 2.7'x2.1'
+M058(NGC4579) Vir 9.8 12h 37' 11d 49' 14 2.9'x2.3'
+M059(NGC4621) Vir 9.8 12h 41' 11d 39' 14 2.7'x1.9'
+M060(NGC4649) Vir 8.8 12h 43' 11d 33' 14 3.7'x3'
+M049(NGC4472) Vir 8.4 12h 29' 07d 59' 13 5.1'x4.2'
+M061(NGC4303) Vir 9.7 12h 21' 04d 27' 13 6'
+M104(NGC4594) Vir 8.3 12h 40' -11d 36' 14 4.3'x1.8' Sombrero Galaxy
+M068(NGC4590) Hya 8.2 12h 39' -26d 45' 21 12'
+M083(NGC5236) Hya 7.6 13h 37' -29d 52' 21 11.2'
+M005(NGC5904) Ser 5.8 15h 18' 02d 04' 14 17.4'
+M013(NGC6205) Her 5.9 16h 41' 36d 27' 8 16.6' Great Cluster In Hercules
+M092(NGC6341) Her 6.5 17h 17' 43d 08' 8 11.2'
+M057(NGC6720) Lyr 9 18h 53' 33d 01' 8 2.5' Ring Nebula
+M056(NGC6779) Lyr 8.3 19h 16' 30d 11' 8 7.1'
+M029(NGC6913) Cyg 6.6 20h 23' 38d 32' 9 7'
+M039(NGC7092) Cyg 4.6 21h 32' 48d 25' 9 32'
+M027(NGC6853) Vul 8.1 19h 59' 22d 43' 8 15.2' Dumbbell Nebula
+M071(NGC6838) Sge 8.3 19h 53' 18d 46' 16 7.2'
+M107(NGC6171) Oph 8.1 16h 32' -13d 02' 15 10'
+M010(NGC6254) Oph 6.6 16h 57' -04d 06' 15 15.1'
+M012(NGC6218) Oph 6.6 16h 47' -01d 56' 15 14.5'
+M014(NGC6402) Oph 7.6 17h 37' -03d 14' 15 11.7'
+M009(NGC6333) Oph 7.9 17h 19' -18d 31' 15 9.3'
+M004(NGC6121) Sco 5.9 16h 23' -26d 31' 22 26.3' Cat's Eye Cluster
+M080(NGC6093) Sco 7.2 16h 17' -22d 59' 22 8.9'
+M019(NGC6273) Oph 7.2 17h 02' -26d 16' 22 13.5'
+M062(NGC6266) Oph 6.6 17h 01' -30d 07' 22 14.1'
+M006(NGC6405) Sco 4.2 17h 40' -32d 13' 22 15' Butterfly Cluster
+M007(NGC6475) Sco 3.3 17h 53' -34d 48' 22 80' Ptolemy's Cluster
+M011(NGC6705) Sct 5.8 18h 51' -06d 16' 16 14' Wild Duck Cluster
+M026(NGC6694) Sct 8 18h 45' -09d 24' 16 15'
+M016(NGC6611) Ser 6 18h 18' -13d 47' 15 35' Eagle Nebula
+M017(NGC6618) Sgr 6 18h 20' -16d 10' 15 46' Omega Nebula/Checkmark Nebula/Swan Nebula/Horseshoe Nebula
+M018(NGC6613) Sgr 6.9 18h 19' -17d 07' 15 9'
+M024(NGC6603) Sgr 11 18h 18' -18d 24' 15 5' Milky Way Patch/Delle Caustiche
+M025(IC4725) Sgr 4.6 18h 31' -19d 15' 16 32'
+M023(NGC6494) Sgr 5.5 17h 56' -19d 00' 15 27'
+M021(NGC6531) Sgr 5.9 18h 04' -22d 29' 22 13'
+M020(NGC6514) Sgr 6.3 18h 02' -23d 01' 22 29' Trifid Nebula
+M008(NGC6523) Sgr 5.8 18h 03' -24d 22' 22 90' Lagoon Nebula/Hourglass Nebula
+M028(NGC6626) Sgr 6.9 18h 24' -24d 51' 22 11.2'
+M022(NGC6656) Sgr 5.1 18h 36' -23d 54' 22 24'
+M069(NGC6637) Sgr 7.7 18h 31' -32d 20' 22 7.1'
+M070(NGC6681) Sgr 8.1 18h 43' -32d 17' 22 7.8'
+M054(NGC6715) Sgr 7.7 18h 55' -30d 29' 22 9.1'
+M055(NGC6809) Sgr 7 19h 39' -30d 57' 22 19'
+M075(NGC6864) Sgr 8.6 20h 06' -21d 55' 23 6'
+M015(NGC7078) Peg 6.4 21h 30' 12d 09' 17 12.3'
+M002(NGC7089) Aqr 6.5 21h 33' -00d 48' 17 12.9'
+M072(NGC6981) Aqr 9.4 20h 53' -12d 32' 16 5.9'
+M073(NGC6994) Aqr 9 20h 58' -12d 37' 16 3'
+M030(NGC7099) Cap 7.5 21h 40' -23d 11' 23 11'
+
+
+
+
+
+
+
+M001(NGC1952)	super_nova_remnant	Tau	8.4 scopesmall	05h 34'	22° 00'	5	6'	Crab Nebula
+M002(NGC7089)	globular_cluster	Aqr	6.5 scopesmall	21h 33'	-00° 48'	17	12.9'
+M003(NGC5272)	globular_cluster	CVn	6.4 scopesmall	13h 42'	28° 23'	7	16.2'
+M004(NGC6121)	globular_cluster	Sco	5.9 scopesmall	16h 23'	-26° 31'	22	26.3'	Cat's Eye Cluster
+M005(NGC5904)	globular_cluster	Ser	5.8 scopesmall	15h 18'	02° 04'	14	17.4'
+M006(NGC6405)	open_cluster	Sco	4.2 nakedeye	17h 40'	-32° 13'	22	15'	Butterfly Cluster
+M007(NGC6475)	open_cluster	Sco	3.3 nakedeye	17h 53'	-34° 48'	22	80'	Ptolemy's Cluster
+M008(NGC6523)	nebula	Sgr	5.8 scopesmall	18h 03'	-24° 22'	22	90'	Lagoon Nebula/Hourglass Nebula
+M009(NGC6333)	globular_cluster	Oph	7.9 scopesmall	17h 19'	-18° 31'	15	9.3'
+M010(NGC6254)	globular_cluster	Oph	6.6 scopesmall	16h 57'	-04° 06'	15	15.1'
+M011(NGC6705)	open_cluster	Sct	5.8 binoculars	18h 51'	-06° 16'	16	14'	Wild Duck Cluster
+M012(NGC6218)	globular_cluster	Oph	6.6 scopesmall	16h 47'	-01° 56'	15	14.5'
+M013(NGC6205)	globular_cluster	Her	5.9 binoculars	16h 41'	36° 27'	8	16.6'	Great Cluster In Hercules
+M014(NGC6402)	globular_cluster	Oph	7.6 scopesmall	17h 37'	-03° 14'	15	11.7'
+M015(NGC7078)	globular_cluster	Peg	6.4 scopesmall	21h 30'	12° 09'	17	12.3'
+M016(NGC6611)	open_cluster_and_nebula	Ser	6 scopesmall	18h 18'	-13° 47'	15	35'	Eagle Nebula
+M017(NGC6618)	open_cluster_and_nebula	Sgr	6 scopesmall	18h 20'	-16° 10'	15	46'	Omega Nebula/Checkmark Nebula/Swan Nebula/Horseshoe Nebula
+M018(NGC6613)	open_cluster	Sgr	6.9 scopesmall	18h 19'	-17° 07'	15	9'
+M019(NGC6273)	globular_cluster	Oph	7.2 scopesmall	17h 02'	-26° 16'	22	13.5'
+M020(NGC6514) H400 object	open_cluster_and_nebula	Sgr	6.3 scopesmall	18h 02'	-23° 01'	22	29'	Trifid Nebula
+M021(NGC6531)	open_cluster	Sgr	5.9 scopesmall	18h 04'	-22° 29'	22	13'
+M022(NGC6656)	globular_cluster	Sgr	5.1 scopesmall	18h 36'	-23° 54'	22	24'
+M023(NGC6494)	open_cluster	Sgr	5.5 scopesmall	17h 56'	-19° 00'	15	27'
+M024(NGC6603)	open_cluster	Sgr	11 scopesmall	18h 18'	-18° 24'	15	5'	Milky Way Patch/Delle Caustiche
+M025(IC4725)	open_cluster	Sgr	4.6	18h 31'	-19° 15'	16	32'
+M026(NGC6694)	open_cluster	Sct	8 scopesmall	18h 45'	-09° 24'	16	15'
+M027(NGC6853)	planetary_nebula	Vul	8.1 scopesmall	19h 59'	22° 43'	8	15.2'	Dumbbell Nebula
+M028(NGC6626)	globular_cluster	Sgr	6.9 scopesmall	18h 24'	-24° 51'	22	11.2'
+M029(NGC6913)	open_cluster	Cyg	6.6 scopesmall	20h 23'	38° 32'	9	7'
+M030(NGC7099)	globular_cluster	Cap	7.5 scopesmall	21h 40'	-23° 11'	23	11'
+M031(NGC224)	galaxy	And	3.5 nakedeye	00h 42'	41° 15'	4	95.3'x30.8'	Andromeda Galaxy
+M032(NGC221)	galaxy	And	8.2 scopesmall	00h 42'	40° 52'	4	4.3'x3.2'	Satellite galaxy of Andromeda
+M033(NGC598) H400 object	galaxy	Tri	5.7 scopesmall	01h 33'	30° 38'	4	35.4'x20.8'	Triangulum Galaxy/Pinwheel galaxy
+M034(NGC1039)	open_cluster	Per	5.2 scopesmall	02h 41'	42° 46'	4	35'
+M035(NGC2168)	open_cluster	Gem	5.1 scopesmall	06h 08'	24° 20'	5	28'
+M036(NGC1960)	open_cluster	Aur	6 scopesmall	05h 36'	34° 07'	5	12'
+M037(NGC2099)	open_cluster	Aur	5.6 scopesmall	05h 52'	32° 33'	5	24'
+M038(NGC1912)	open_cluster	Aur	6.4 scopesmall	05h 28'	35° 50'	5	21'
+M039(NGC7092)	open_cluster	Cyg	4.6 scopesmall	21h 32'	48° 25'	9	32'
+M040(M40)	star_double	UMa	9.1	12h 22'	58° 05'	2	0.8'	Winnecke 4
+M041(NGC2287)	open_cluster	CMa	4.5 scopesmall	06h 46'	-20° 44'	19	38'
+M042(NGC1976)	nebula	Ori	4 nakedeye	05h 35'	-05° 26'	11	66'	Great Nebula In Orion/Trapezium
+M043(NGC1982)	nebula	Ori	9 scopesmall	05h 35'	-05° 16'	11	20'	de Mairan's Nebula
+M044(NGC2632)	open_cluster	Cnc	3.1 nakedeye	08h 40'	19° 59'	12	95'	Beehive Cluster/Praesepe
+M045(M45)	open_cluster	Tau	1.6	03h 46'	24° 06'	4	110'	Pleiades
+M046(NGC2437)	open_cluster	Pup	6.1 scopesmall	07h 41'	-14° 49'	12	27'
+M047(NGC2422) H400 object	open_cluster	Pup	4.4 scopesmall	07h 36'	-14° 30'	12	30'
+M048(NGC2548) H400 object	open_cluster	Hya	5.8 scopesmall	08h 13'	-05° 47'	12	54'
+M049(NGC4472)	galaxy	Vir	8.4 scopesmall	12h 29'	07° 59'	13	5.1'x4.2'
+M050(NGC2323)	open_cluster	Mon	5.9 scopesmall	07h 03'	-08° 19'	12	16'
+M051(NGC5194)	galaxy	CVn	8.4 scopesmall	13h 29'	47° 11'	7	5.6'x3.5'	Whirlpool Galaxy
+M052(NGC7654)	open_cluster	Cas	6.9 scopesmall	23h 24'	61° 34'	3	13'
+M053(NGC5024)	globular_cluster	Com	7.7 scopesmall	13h 12'	18° 09'	14	12.6'
+M054(NGC6715)	globular_cluster	Sgr	7.7 scopesmall	18h 55'	-30° 29'	22	9.1'
+M055(NGC6809)	globular_cluster	Sgr	7 scopesmall	19h 39'	-30° 57'	22	19'
+M056(NGC6779)	globular_cluster	Lyr	8.3 scopesmall	19h 16'	30° 11'	8	7.1'
+M057(NGC6720)	planetary_nebula	Lyr	9 scopesmall	18h 53'	33° 01'	8	2.5'	Ring Nebula
+M058(NGC4579)	galaxy	Vir	9.8 scopesmall	12h 37'	11° 49'	14	2.9'x2.3'
+M059(NGC4621)	galaxy	Vir	9.8 scopesmall	12h 41'	11° 39'	14	2.7'x1.9'
+M060(NGC4649)	galaxy	Vir	8.8 scopesmall	12h 43'	11° 33'	14	3.7'x3'
+M061(NGC4303) H400 object	galaxy	Vir	9.7 scopesmall	12h 21'	04° 27'	13	6'
+M062(NGC6266)	globular_cluster	Oph	6.6 scopesmall	17h 01'	-30° 07'	22	14.1'
+M063(NGC5055)	galaxy	CVn	8.6 scopesmall	13h 15'	42° 01'	7	6.3'x3.6'	Sunflower Galaxy
+M064(NGC4826)	galaxy	Com	8.5 scopesmall	12h 56'	21° 41'	7	5'x2.7'	Black-Eye Galaxy
+M065(NGC3623)	galaxy	Leo	9.3 scopesmall	11h 18'	13° 04'	13	4.9'x1.4'
+M066(NGC3627)	galaxy	Leo	9 scopesmall	11h 20'	12° 59'	13	4.6'x2.1'
+M067(NGC2682)	open_cluster	Cnc	6.9 scopesmall	08h 50'	11° 49'	12	30'
+M068(NGC4590)	globular_cluster	Hya	8.2 scopesmall	12h 39'	-26° 45'	21	12'
+M069(NGC6637)	globular_cluster	Sgr	7.7 scopesmall	18h 31'	-32° 20'	22	7.1'
+M070(NGC6681)	globular_cluster	Sgr	8.1 scopesmall	18h 43'	-32° 17'	22	7.8'
+M071(NGC6838)	globular_cluster	Sge	8.3 scopesmall	19h 53'	18° 46'	16	7.2'
+M072(NGC6981)	globular_cluster	Aqr	9.4 scopesmall	20h 53'	-12° 32'	16	5.9'
+M073(NGC6994)	open_cluster	Aqr	9 scopesmall	20h 58'	-12° 37'	16	3'
+M074(NGC628)	galaxy	Psc	9.2 scopesmall	01h 36'	15° 46'	10	5.2'x4.8'
+M075(NGC6864)	globular_cluster	Sgr	8.6 scopesmall	20h 06'	-21° 55'	23	6'
+M076(NGC650)	planetary_nebula	Per	12 scopesmall	01h 42'	51° 33'	1	4.8'	Butterfly Nebula/Little Dumbbell Nebula/Barbell Nebula/Cork Nebula
+M077(NGC1068)	galaxy	Cet	8.8 scopesmall	02h 42'	-00° 01'	10	3.5'x3'
+M078(NGC2068)	nebula	Ori	8 scopesmall	05h 46'	00° 03'	11	8'
+M079(NGC1904)	globular_cluster	Lep	8 scopesmall	05h 24'	-24° 32'	19	8.7'
+M080(NGC6093)	globular_cluster	Sco	7.2 scopesmall	16h 17'	-22° 59'	22	8.9'
+M081(NGC3031)	galaxy	UMa	6.9 scopesmall	09h 55'	69° 03'	2	13.5'x7.1'	Bode's Galaxy or Bode's Nebula
+M082(NGC3034) H400 object	galaxy	UMa	8.4 scopesmall	09h 55'	69° 40'	2	5.6'x2.1'	The Cigar Galaxy
+M083(NGC5236)	galaxy	Hya	7.6 scopesmall	13h 37'	-29° 52'	21	11.2'
+M084(NGC4374)	galaxy	Vir	9.3 scopesmall	12h 25'	12° 53'	13	3.2'x2.8'
+M085(NGC4382)	galaxy	Com	9.2 scopesmall	12h 25'	18° 10'	13	7.1'
+M086(NGC4406)	galaxy	Vir	9.2 scopesmall	12h 26'	12° 56'	13	4.5'x2.9'
+M087(NGC4486)	galaxy	Vir	8.6 scopesmall	12h 30'	12° 24'	14	7.2'	Virgo A
+M088(NGC4501)	galaxy	Com	9.5 scopesmall	12h 32'	14° 24'	14	3.5'x1.9'
+M089(NGC4552)	galaxy	Vir	9.8 scopesmall	12h 35'	12° 33'	14	4.2'
+M090(NGC4569)	galaxy	Vir	9.5 scopesmall	12h 36'	13° 10'	14	4.8'x2.2'
+M091(NGC4548) H400 object	galaxy	Com	10.2 scopesmall	12h 35'	14° 30'	14	2.7'x2.1'
+M092(NGC6341)	globular_cluster	Her	6.5 scopesmall	17h 17'	43° 08'	8	11.2'
+M093(NGC2447)	open_cluster	Pup	6.2 scopesmall	07h 44'	-23° 52'	19	22'
+M094(NGC4736)	galaxy	CVn	8.2 scopesmall	12h 50'	41° 06'	7	5.6'x4.6'
+M095(NGC3351)	galaxy	Leo	9.7 scopesmall	10h 43'	11° 42'	13	3.7'x2.5'
+M096(NGC3368)	galaxy	Leo	9.2 scopesmall	10h 46'	11° 49'	13	3.8'x2.6'
+M097(NGC3587)	planetary_nebula	UMa	11.2 scopesmall	11h 14'	55° 01'	2	3.2'	Owl Nebula
+M098(NGC4192)	galaxy	Com	10.1 scopesmall	12h 13'	14° 53'	13	4.9'x1.4'
+M099(NGC4254)	galaxy	Com	9.8 scopesmall	12h 18'	14° 24'	13	5.4'	Pin-Wheel Nebula
+M100(NGC4321)	galaxy	Com	9.4 scopesmall	12h 22'	15° 49'	13	3.7'x3.1'
+M101(NGC5457)	galaxy	UMa	7.7 scopesmall	14h 03'	54° 20'	2	26.9'	The Pinwheel Galaxy
+M102(NGC5866) H400 object	galaxy	Dra	10 scopesmall	15h 06'	55° 46'	2	1.4'x0.9'	This is NOT M102, included however for completeness
+M103(NGC581)	open_cluster	Cas	7.4 scopesmall	01h 33'	60° 41'	1	6'
+M104(NGC4594) H400 object	galaxy	Vir	8.3 scopesmall	12h 40'	-11° 36'	14	4.3'x1.8'	Sombrero Galaxy
+M105(NGC3379) H400 object	galaxy	Leo	9.3 scopesmall	10h 47'	12° 35'	13	4.5'
+M106(NGC4258) H400 object	galaxy	CVn	8.3 scopesmall	12h 19'	47° 18'	7	9.3'x3.6'
+M107(NGC6171) H400 object	globular_cluster	Oph	8.1 scopesmall	16h 32'	-13° 02'	15	10'
+M108(NGC3556) H400 object	galaxy	UMa	10.1 scopesmall	11h 11'	55° 40'	2	4.3'x1.1'	Surfboard Galaxy
+M109(NGC3992) H400 object	galaxy	UMa	9.8 scopesmall	11h 57'	53° 23'	2	3.8'x2.3'
+M110(NGC205) H400 object	galaxy	And	8 scopesmall	00h 40'	41° 40'	4	10.9'x5.5'	Satellite galaxy of Andromeda
+
+
+
+
+Link  M#   NGC# Con Type  ra    dec   V      D          d
+
+ M45  045  0000 Tau 1 03 47.0 +24 07  1.6  110.0        0.38
+ M31  031   224 And 5 00 42.7 +41 16  3.4  178x63    2900
+ M44  044  2632 Cnc 1 08 40.1 +19 59  3.7   95.0        0.577
+ M42  042  1976 Ori 4 05 35.4 -05 27  4.0   85x60       1.6
+  M7  007  6475 Sco 1 17 53.9 -34 49  4.1   80.0        0.8
+  M6  006  6405 Sco 1 17 40.1 -32 13  4.2   25.0        1.6
+ M24  024 >6603 Sgr B 18 16.9 -18 29  4.6   90         10
+ M41  041  2287 CMa 1 06 46.0 -20 44  4.6   38.0        2.3
+ M39  039  7092 Cyg 1 21 32.2 +48 26  4.6   32.0        0.825
+ M22  022  6656 Sgr 2 18 36.4 -23 54  5.1   24.0       10.4
+ M47  047  2422 Pup 1 07 36.6 -14 30  5.2   30.0        1.6
+ M35  035  2168 Gem 1 06 08.9 +24 20  5.3   28.0        2.8
+ M34  034  1039 Per 1 02 42.0 +42 47  5.5   35.0        1.4
+ M48  048  2548 Hya 1 08 13.8 -05 48  5.5   54.0        1.5
+  M4  004  6121 Sco 2 16 23.6 -26 32  5.6   26.3        7.2
+  M5  005  5904 Ser 2 15 18.6 +02 05  5.6   17.4       24.5
+ M33  033   598 Tri 5 01 33.9 +30 39  5.7   73x45    3000
+ M13  013  6205 Her 2 16 41.7 +36 28  5.8   16.6       25.1
+ M46  046  2437 Pup 1 07 41.8 -14 49  6.0   27.0        5.4
+ M93  093  2447 Pup 1 07 44.6 -23 52  6.0   22.0        3.6
+  M8  008  6523 Sgr 4 18 03.8 -24 23  6.0   90x40       5.2
+ M67  067  2682 Cnc 1 08 50.4 +11 49  6.1   30.0        2.7
+ M37  037  2099 Aur 1 05 52.4 +32 33  6.2   24.0        4.4
+  M3  003  5272 CVn 2 13 42.2 +28 23  6.2   16.2       33.9
+ M15  015  7078 Peg 2 21 30.0 +12 10  6.2   12.3       33.6
+ M36  036  1960 Aur 1 05 36.1 +34 08  6.3   12.0        4.1
+ M50  050  2323 Mon 1 07 03.2 -08 20  6.3   16.0        3
+ M11  011  6705 Sct 1 18 51.1 -06 16  6.3   14.0        6
+ M55  055  6809 Sgr 2 19 40.0 -30 58  6.3   19.0       17.6
+ M92  092  6341 Her 2 17 17.1 +43 08  6.4   11.2       26.7
+ M16  016  6611 Ser 1 18 18.8 -13 47  6.4    7.0        7
+ M21  021  6531 Sgr 1 18 04.6 -22 30  6.5   13.0        4.25
+ M25  025 I4725 Sgr 1 18 31.6 -19 15  6.5   40.0        2
+  M2  002  7089 Aqr 2 21 33.5 -00 49  6.5   12.9       37.5
+ M62  062  6266 Oph 2 17 01.2 -30 07  6.5   14.1       22.5
+ M10  010  6254 Oph 2 16 57.1 -04 06  6.6   15.1       14.4
+ M12  012  6218 Oph 2 16 47.2 -01 57  6.7   14.5       16.0
+ M19  019  6273 Oph 2 17 02.6 -26 16  6.8   13.5       28.4
+ M28  028  6626 Sgr 2 18 24.5 -24 52  6.8   11.2       18.6
+ M81  081  3031 UMa 5 09 55.6 +69 04  6.9   21x10   12000
+ M23  023  6494 Sgr 1 17 56.8 -19 01  6.9   27.0        2.15
+ M17  017  6618 Sgr 4 18 20.8 -16 11  7.0   11.0        5
+ M29  029  6913 Cyg 1 20 23.9 +38 32  7.1    7.0        4.0
+ M30  030  7099 Cap 2 21 40.4 -23 11  7.2   11.0       26.1
+ M80  080  6093 Sco 2 16 17.0 -22 59  7.3    8.9       32.6
+ M52  052  7654 Cas 1 23 24.2 +61 35  7.3   13.0        5.0
+M103  103   581 Cas 1 01 33.2 +60 42  7.4    6.0        8.5
+ M38  038  1912 Aur 1 05 28.4 +35 50  7.4   21.0        4.2
+ M27  027  6853 Vul 3 19 59.6 +22 43  7.4  8.0x5.7      1.25
+ M18  018  6613 Sgr 1 18 19.9 -17 08  7.5    9.0        4.9
+ M83  083  5236 Hya 5 13 37.0 -29 52  7.6   11x10   15000
+ M14  014  6402 Oph 2 17 37.6 -03 15  7.6   11.7       29.0
+ M54  054  6715 Sgr 2 18 55.1 -30 29  7.6    9.1       88.7
+ M53  053  5024 Com 2 13 12.9 +18 10  7.6   12.6       59.7
+ M69  069  6637 Sgr 2 18 31.4 -32 21  7.6    7.1       28.0
+  M9  009  6333 Oph 2 17 19.2 -18 31  7.7    9.3       26.7
+ M79  079  1904 Lep 2 05 24.2 -24 31  7.7    8.7       42.1
+ M68  068  4590 Hya 2 12 39.5 -26 45  7.8   12.0       33.3
+M101  101  5457 UMa 5 14 03.2 +54 21  7.9   22.0    27000
+ M70  070  6681 Sgr 2 18 43.2 -32 18  7.9    7.8       29.4
+M107  107  6171 Oph 2 16 32.5 -13 03  7.9   10.0       20.9

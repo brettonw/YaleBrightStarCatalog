@@ -9,7 +9,7 @@ There are several versions of this file processed for use:
 | bsc5.json | Most BSC fields, with RA/Dec values consolidated, Notes consolidated, and computed values for MKK spectral and luminosity classes (including approximate color temperature) | https://brettonw.github.io/YaleBrightStarCatalog/bsc5.json |
 | bsc5-orig.json | Original BSC fields as found in bsc5.readme.txt | https://brettonw.github.io/YaleBrightStarCatalog/bsc5-orig.json |
 | bsc5-all.json | All original BSC fields as found in bsc5.readme.txt, and all consolidated and computed fields | https://brettonw.github.io/YaleBrightStarCatalog/bsc5-all.json |
-| bsc5-short.json | Short version of the BSC with RA/Dec, K, and name values (B, F, C, N) | https://brettonw.github.io/YaleBrightStarCatalog/bsc5-orig.json |
+| bsc5-short.json | Short version of the BSC with RA/Dec, V, K, and name values (B, F, C, N) | https://brettonw.github.io/YaleBrightStarCatalog/bsc5-short.json |
 
 Fields in the Original BSC5 file (empty fields are omitted):
 
@@ -106,6 +106,7 @@ Fields in the Short BSC5 file (empty fields are omitted):
 | RA | Right Ascension (00h 00m 00.0s), equinox J2000, epoch 2000.0 |
 | Dec | Declination (+/-00° 00′ 00″), equinox J2000, epoch 2000.0 |
 | K | An approximate color temperature of the star, computed from B-V or the SpectralCls |
+| V | Visual magnitude |
 
 See also:
 * Almanac Bright Stars 2016 (https://brettonw.github.io/YaleBrightStarCatalog/almanac-2016.json)

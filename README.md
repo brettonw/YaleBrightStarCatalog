@@ -115,8 +115,8 @@ Fields in the Messier catalog file (https://brettonw.github.io/YaleBrightStarCat
 
 | Field | Description |
 | ----- | ----------- |
-| M | Messier Number |
-| NGC| NGC Number | 
+| M | Messier number |
+| NGC| New General Catalogue number | 
 | N | The common name of the object (if there is one) |
 | T | The type of the object |
 | C | The traditional 3-letter abbreviation for the constellation name |
@@ -124,3 +124,21 @@ Fields in the Messier catalog file (https://brettonw.github.io/YaleBrightStarCat
 | Dec | Declination (+/-00° 00′), equinox J2000, epoch 2000.0 |
 | V | Visual magnitude |
 | S | Size in arc-minutes |
+
+Messier T (Type) values are:
+
+| Type | Description |
+| ----- | ----------- |
+| OC | Open Cluster | 
+| GC | Globular Cluster | 
+| PN | Planetary Nebula | 
+| DN | Diffuse Nebula | 
+| AS | Asterism | 
+| DS | Double Star | 
+| MW | Milky Way | 
+| SG | Spiral Galaxy | 
+| BG | Barred Galaxy | 
+| LG | Lenticular Galaxy | 
+| EG | Elliptical Galaxy | 
+| IG | Irregular Galaxy | 
+| SN | Supernova | 

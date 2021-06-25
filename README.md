@@ -110,3 +110,17 @@ Fields in the Short BSC5 file (empty fields are omitted):
 
 See also:
 * Almanac Bright Stars 2016 (https://brettonw.github.io/YaleBrightStarCatalog/almanac-2016.json)
+
+Fields in the Messier catalog file (https://brettonw.github.io/YaleBrightStarCatalog/messier.json):
+
+| Field | Description |
+| ----- | ----------- |
+| M | Messier Number |
+| NGC| NGC Number | 
+| N | The common name of the object (if there is one) |
+| T | The type of the object |
+| C | The traditional 3-letter abbreviation for the constellation name |
+| RA | Right Ascension (00h 00.0m), equinox J2000, epoch 2000.0 |
+| Dec | Declination (+/-00° 00′), equinox J2000, epoch 2000.0 |
+| V | Visual magnitude |
+| S | Size in arc-minutes |

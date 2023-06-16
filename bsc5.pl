@@ -7,6 +7,7 @@
 use warnings FATAL => "all";
 no warnings "once";
 use feature "unicode_strings";
+use strict;
 use utf8;
 use open ":std", ":encoding(UTF-8)";
 
@@ -162,6 +163,7 @@ my %categoryNames = (
     "S" => "Spectra", "SB" => "Spectroscopic binaries", "VAR" => "Variability"
 );
 
+# https://en.wikipedia.org/wiki/Stellar_classification
 my %colorTemperatureRanges = (
     "C" => "2000-6000", "S" => "2000-3500", "M" => "2000-3500", "K" => "3500-5000", "G" => "5000-6000", "F" => "6000-7500", "A" => "7500-10000", "B" => "10000-30000", "O" => "30000-60000"
 );
